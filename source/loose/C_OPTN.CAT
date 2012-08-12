@@ -1,0 +1,91 @@
+%Header Record
+Format:TXT
+Communication SW:0
+Data Type:PG
+Capacity:1218
+File Name:C OPTN
+Group Name:
+Password:
+Option1:NL
+Option2:
+Option3:
+Option4:
+%Data Record
+\Lbl 0
+3\->F
+\Green \Text 49,62,"OPTIONS LIST:"
+\Text 55,62,"EN\slashDISABLE: 1-4"
+\Lbl 1
+\Do:\Getkey\->A
+\LpWhile A\<>54\ And A\<>65\ And A\<>31
+A=54\=>\GotoY
+A=65\=>\GotoY
+1\->E:\Prog "C EMPTY"
+\Lbl 2
+\Orange \Text 49,62,"1"
+G=8426\=>\Green \Text 49,68,"+"
+G=6248\=>\Orange \Text 49,68,"*"
+\Text 49,74,"(OWN) PIECE"
+\Orange \Text 55,62,"2"
+H=8426\=>\Green \Text 55,68,"+"
+H=6248\=>\Orange \Text 55,68,"*"
+\Text 55,74,"LOG MOVES"
+\Green \Text 54,120,"\aster"
+\Lbl 3
+\Do:\Getkey\->A
+\LpWhile A\<>54\ And A\<>65\ And A\<>72\ And A\<>62\ And A\<>31
+A=54\=>\GotoY
+A=65\=>\GotoY
+A=72\=>\Goto6
+A=62\=>\Goto7
+\Lbl 4
+1\->E:\Prog "C EMPTY"
+\Text 49,62,"3"
+J=6248\=>\Orange \Text 49,62,"3"
+I=8426\=>\Green \Text 49,68,"+"
+I=6248\=>\Orange \Text 49,68,"*"
+\Text 49,74,"CHECK MOVES"
+\Text 55,65,"4"
+I=8426\=>\Orange \Text 55,65,"4"
+J=8426\=>\Green \Text 55,71,"+"
+J=6248\=>\Orange \Text 55,71,"*"
+\Text 55,83,"''  CHESS"
+\Green \Text 54,120,"\aster"
+\Lbl 5
+\Do:\Getkey\->A
+\LpWhile A\<>54\ And A\<>65\ And A\<>52\ And A\<>73\ And A\<>31
+A=54\=>\GotoY
+A=65\=>\GotoY
+A=52\=>\Goto8
+A=73\=>\Goto9
+\GotoZ
+\Lbl 6
+\If G=8426
+\Then 6248\->G:\Green \Text 49,68," ":\Orange \Text 49,68,"*":\Goto3
+\Else 8426\->G:\Orange \Text 49,68," ":\Green \Text 49,68,"+":\Goto3
+\Lbl 7
+\If H=8426
+\Then 6248\->H:\Green \Text 55,68," ":\Orange \Text 55,68,"*":\Goto3
+\Else 8426\->H:\Orange \Text 55,68," ":\Green \Text 55,68,"+":\Goto3
+\Lbl 8
+J=8426\=>\Goto5
+\If I=8426
+\Then 6248\->I:\Green \Text 49,68," ":\Orange \Text 49,68,"*":\Orange \Text 55,65," ":\Goto5
+\Else 8426\->I:\Orange \Text 49,68," ":\Green \Text 49,68,"+":\Orange \Text 55,65,"4":\Goto5
+\Lbl 9
+I=6248\=>\Goto5
+\If J=8426
+\Then 6248\->J:\Green \Text 55,71," ":\Orange \Text 55,71,"*":\Orange \Text 49,62,"3":\Goto5
+\Else 8426\->J:\Orange \Text 55,71," ":\Green \Text 55,71,"+":\Orange \Text 49,62," ":\Goto5
+\Lbl Y
+1\->E:\Prog "C EMPTY"
+A=54\=>\Goto0
+A=65\=>3\->F
+A=65\=>\Prog "C HELP"
+1\->E:\Prog "C EMPTY"
+\Goto0
+\Lbl Z
+\Orange \Text 56,114,"   "
+1\->E:\Prog "C EMPTY"
+
+%End

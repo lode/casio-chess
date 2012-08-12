@@ -1,0 +1,1560 @@
+File Name:CHESS
+
+theta=6574=>Goto 1
+0->r:0->theta:0->A~Z
+{8,8}->Dim Mat C
+{9,4}->Dim Mat D
+Prog "C START"
+Lbl 1
+Prog "C PLAY"
+theta=6574=>Goto 2
+Prog "C END"
+Lbl 2
+
+
+File Name:C START
+
+Cls
+Green F-Line 2,1,125,1
+Green F-Line 126,2,126,61
+Green F-Line 125,62,2,62
+Green F-Line 1,61,1,2
+F-Line 4,3,59,3
+F-Line 60,4,60,59
+F-Line 59,60,4,60
+F-Line 3,59,3,4
+For 4->A To 59
+Green F-Line 4,A,59,A
+Next 
+For 4->A To 46 Step 14
+For 4->B To 46 Step 14
+Green Text A,B," "
+Green Text A+1,B," "
+Green Text A,B+3," "
+Green Text A+1,B+3," "
+Next 
+Next 
+For 11->A To 53 Step 14
+For 11->B To 53 Step 14
+Green Text A,B," "
+Green Text A+1,B," "
+Green Text A,B+3," "
+Green Text A+1,B+3," "
+Next 
+Next 
+Prog "C DRAW"
+[[-2,-3,-4,-5,-6,-4,-3,-2][-1,-1,-1,-1,-1,-1,-1,-1][0,0,0,0,0,0,0,0][0,0,0,0,0,0,0,0][0,0,0,0,0,0,0,0][0,0,0,0,0,0,0,0][1,1,1,1,1,1,1,1][2,3,4,5,6,4,3,2]->Mat C
+8426->Mat D[6,1]
+8426->Mat D[6,2]
+8426->Mat D[6,3]
+8426->Mat D[6,4]
+Green Text 3,63,"CHESS  (C) LODEC"
+Green F-Line 62,9,124,9
+Text 11,62,"PLAYER"
+Text 17,62,"PIECE"
+Green F-Line 86,11,86,21
+Text 11,88,"PL"
+Green F-Line 107,11,107,21
+Text 11,109,"OPTN"
+Orange Text 11,109,"O"
+8426->G
+8426->H
+8426->I
+8426->J
+Text 17,109,"HELP"
+Orange Text 17,109,"H"
+Green F-Line 63,23,123,23
+Text 25,64,"MOVE"
+Green F-Line 62,31,124,31
+Text 33,64,"NEW"
+Green F-Line 62,39,124,39
+Text 41,64,"OLD"
+Green F-Line 63,47,123,47
+Green F-Line 62,24,62,46
+Green F-Line 82,23,82,47
+Text 25,84,"PL 1"
+Text 33,91,"-"
+Text 41,91,"-"
+Green F-Line 103,23,103,47
+Text 25,105,"PL 2"
+Text 33,112,"-"
+Text 41,112,"-"
+Green F-Line 124,24,124,46
+
+
+File Name:C DRAW
+
+0->Z
+Lbl A
+Z+1->Z
+Z=33=>Goto Z
+If Z=1
+Then -2->P:5->S:5->T
+IfEnd
+If Z=2
+Then -3->P:5->S:12->T
+IfEnd
+If Z=3
+Then -4->P:5->S:19->T
+IfEnd
+If Z=4
+Then -5->P:5->S:26->T
+IfEnd
+If Z=5
+Then -6->P:5->S:33->T
+IfEnd
+If Z=6
+Then -4->P:5->S:40->T
+IfEnd
+If Z=7
+Then -3->P:5->S:47->T
+IfEnd
+If Z=8
+Then -2->P:5->S:54->T
+IfEnd
+If Z=9
+Then -1->P:12->S:5->T
+IfEnd
+If Z=10
+Then 12->S:12->T
+IfEnd
+If Z=11
+Then 12->S:19->T
+IfEnd
+If Z=12
+Then 12->S:26->T
+IfEnd
+If Z=13
+Then 12->S:33->T
+IfEnd
+If Z=14
+Then 12->S:40->T
+IfEnd
+If Z=15
+Then 12->S:47->T
+IfEnd
+If Z=16
+Then 12->S:54->T
+IfEnd
+If Z=17
+Then 1->P:47->S:5->T
+IfEnd
+If Z=18
+Then 47->S:12->T
+IfEnd
+If Z=19
+Then 47->S:19->T
+IfEnd
+If Z=20
+Then 47->S:26->T
+IfEnd
+If Z=21
+Then 47->S:33->T
+IfEnd
+If Z=22
+Then 47->S:40->T
+IfEnd
+If Z=23
+Then 47->S:47->T
+IfEnd
+If Z=24
+Then 47->S:54->T
+IfEnd
+If Z=25
+Then 2->P:54->S:5->T
+IfEnd
+If Z=26
+Then 3->P:54->S:12->T
+IfEnd
+If Z=27
+Then 4->P:54->S:19->T
+IfEnd
+If Z=28
+Then 5->P:54->S:26->T
+IfEnd
+If Z=29
+Then 6->P:54->S:33->T
+IfEnd
+If Z=30
+Then 4->P:54->S:40->T
+IfEnd
+If Z=31
+Then 3->P:54->S:47->T
+IfEnd
+If Z=32
+Then 2->P:54->S:54->T
+IfEnd
+S->Q:T->R
+Prog "C DRAW P"
+Goto A
+Lbl Z
+
+
+File Name:C DRAW P
+
+Orange Text Q,R," "
+Text Q,R," "
+Orange Text S,T," "
+Text S,T," "
+P=-6=>Goto A
+P=-5=>Goto B
+P=-4=>Goto C
+P=-3=>Goto D
+P=-2=>Goto E
+P=-1=>Goto F
+P=1=>Goto G
+P=2=>Goto H
+P=3=>Goto I
+P=4=>Goto J
+P=5=>Goto K
+P=6=>Goto L
+Goto Z
+Lbl A
+F-Line T+1,S+4,T+3,S+4
+F-Line T+2,S+4,T+2,S
+F-Line T+1,S+1,T+3,S+1
+Goto Z
+Lbl B
+F-Line T+1,S+4,T+3,S+4
+F-Line T+2,S+4,T+2,S+1
+F-Line T+1,S,T+1,S+1
+F-Line T+3,S,T+3,S+1
+Goto Z
+Lbl C
+F-Line T+1,S+4,T+3,S+4
+F-Line T+1,S+3,T+3,S+3
+F-Line T+2,S+4,T+2,S+1
+Goto Z
+Lbl D
+F-Line T+2,S+4,T+2,S+1
+F-Line T+1,S+2,T+3,S+2
+F-Line T+1,S+2,T+1,S+3
+Goto Z
+Lbl E
+F-Line T+1,S+4,T+1,S+1
+F-Line T+2,S+4,T+2,S+2
+F-Line T+3,S+4,T+3,S+1
+Goto Z
+Lbl F
+F-Line T+1,S+4,T+3,S+4
+F-Line T+2,S+4,T+2,S+2
+Goto Z
+Lbl G
+Orange F-Line T+1,S+4,T+3,S+4
+Orange F-Line T+2,S+4,T+2,S+2
+Goto Z
+Lbl H
+Orange F-Line T+1,S+4,T+1,S+1
+Orange F-Line T+2,S+4,T+2,S+2
+Orange F-Line T+3,S+4,T+3,S+1
+Goto Z
+Lbl I
+Orange F-Line T+2,S+4,T+2,S+1
+Orange F-Line T+1,S+2,T+3,S+2
+Orange F-Line T+1,S+2,T+1,S+3
+Goto Z
+Lbl J
+Orange F-Line T+1,S+4,T+3,S+4
+Orange F-Line T+1,S+3,T+3,S+3
+Orange F-Line T+2,S+4,T+2,S+1
+Goto Z
+Lbl K
+Orange F-Line T+1,S+4,T+3,S+4
+Orange F-Line T+2,S+4,T+2,S+1
+Orange F-Line T+1,S,T+1,S+1
+Orange F-Line T+3,S,T+3,S+1
+Goto Z
+Lbl L
+Orange F-Line T+1,S+4,T+3,S+4
+Orange F-Line T+2,S+4,T+2,S
+Orange F-Line T+1,S+1,T+3,S+1
+Goto Z
+Lbl Z
+
+
+File Name:C PLAY
+
+If theta=6574
+Then 0->theta:Goto C
+IfEnd
+Lbl A
+0->r
+Lbl B
+r+1->r
+r=3=>Goto A
+Text 11,100,r
+r=1=>33->C~D
+r=2=>26->C:33->D
+1->Z
+Lbl C
+Z=1=>Text 17,88,"     "
+Z=1=>Text 49,62,"SELECT PIECE   "
+Z=2=>Text 49,62,"SELECT LOCATION"
+Z=1=>1->F
+Z=2=>2->F
+Do:Getkey->A
+Green PxlChg C,D
+LpWhile A=0
+A=47=>Goto X
+A=68=>Goto Z
+A=54=>Goto Y
+A=65=>Goto Y
+A=31=>Goto D
+A=28=>Goto 1
+A=27=>Goto 2
+A=37=>Goto 3
+A=38=>Goto 4
+Goto C
+Lbl 1
+C=5=>Goto C
+Frac (C/2)->A
+Frac (D/2)->B
+A<>B=>Green PxlOn C,D
+A=B=>Green PxlOff C,D
+C-7->C
+Goto C
+Lbl 2
+D=54=>Goto C
+Frac (C/2)->A
+Frac (D/2)->B
+A<>B=>Green PxlOn C,D
+A=B=>Green PxlOff C,D
+D+7->D
+Goto C
+Lbl 3
+C=54=>Goto C
+Frac (C/2)->A
+Frac (D/2)->B
+A<>B=>Green PxlOn C,D
+A=B=>Green PxlOff C,D
+C+7->C
+Goto C
+Lbl 4
+D=5=>Goto C
+Frac (C/2)->A
+Frac (D/2)->B
+A<>B=>Green PxlOn C,D
+A=B=>Green PxlOff C,D
+D-7->D
+Goto C
+Lbl D
+Frac (C/2)->A
+Frac (D/2)->B
+A<>B=>Green PxlOn C,D
+A=B=>Green PxlOff C,D
+Z=2=>Goto E
+C->Q:D->R
+(Q+2)/7->M
+(R+2)/7->N
+Mat C[M,N]->P
+1->F:Prog "C RECON"
+Z+1->Z
+Goto C
+Lbl E
+C->S:D->T
+(S+2)/7->V
+(T+2)/7->W
+8426->O
+2->F:Prog "C RECON"
+Abs P=1=>Prog "C P PAWN"
+Abs P=6=>Prog "C P KING"
+O=6248=>Goto C
+Text 49,62,"MOVING PIECE"
+Prog "C DRAW P"
+0->Mat C[M,N]
+P->Mat C[V,W]
+2->E:Prog "C EMPTY"
+Prog "C LOG MV"
+0->theta
+3->F:Prog "C RECON"
+theta<>0=>Goto Z
+O=6574=>Goto F
+O=4756=>Goto G
+Goto B
+Lbl F
+Prog "C PAWN S"
+Orange Text 55,62,"        "
+Prog "C DRAW P"
+0->Mat C[M,N]
+P->Mat C[V,W]
+0->theta
+3->F:Prog "C RECON"
+theta<>0=>Prog "C END"
+Goto B
+Lbl G
+Prog "C KING S"
+Text 49,62,"MOVING PIECE"
+Prog "C DRAW P"
+0->Mat C[M,N]
+P->Mat C[V,W]
+2->E:Prog "C EMPTY"
+0->theta
+3->F:Prog "C RECON"
+theta<>0=>Prog "C END"
+Goto B
+Lbl X
+2->E:Prog "C EMPTY"
+Text 49,62,"ARE YOU SURE?"
+Text 55,62,"YES OR NO"
+Orange Text 55,62,"Y      N"
+Lbl 5
+0->A
+Do
+Getkey->A
+LpWhile A=0
+A=32=>Goto 6
+A=64=>Goto 7
+Goto 5
+Lbl 6
+Fill(0,Mat C)
+Fill(0,Mat C)
+0->r:0->theta:0->A~Z
+ClrText:Cls
+Stop
+Lbl 7
+1->E:Prog "C EMPTY"
+Goto C
+Lbl Y
+1->E:Prog "C EMPTY"
+A=54=>Prog "C OPTN"
+A=65=>Prog "C HELP"
+1->E:Prog "C EMPTY"
+Goto C
+Lbl Z
+theta<>0=>Goto 8
+6574->theta
+Frac (C/2)->A
+Frac (D/2)->B
+A<>B=>Green PxlOn C,D
+A=B=>Green PxlOff C,D
+Text 49,62,"GAME PAUSED    "
+Lbl 8
+
+
+File Name:C EMPTY
+
+E=2=>Goto 2
+Orange Text 49,62,"                 "
+Orange Text 55,62,"                 "
+Green Text 49,62,"                 "
+Green Text 55,62,"                 "
+Lbl 2
+Text 49,62,"                 "
+Text 55,62,"                 "
+
+
+File Name:C RECON
+
+2->E:Prog "C EMPTY"
+F=1=>Goto 1
+F=2=>Goto 2
+F=3=>Goto 3
+Lbl 1
+G=6248=>Goto Z
+Text 49,62,"CHECKING PIECE"
+If r=1 And P>0
+Then Goto A
+IfEnd
+If r=2 And P<0
+Then Goto A
+IfEnd
+2->E:Prog "C EMPTY"
+Text 49,62,"INVALED PIECE"
+Text 55,62,"PRESS EXE"Disp
+2->E:Prog "C EMPTY"
+Z-1->Z
+Goto Z
+Lbl A
+Text 17,88,"     "
+Abs P=6=>Text 17,88,"KING"
+Abs P=5=>Text 17,88,"QUEE"
+Abs P=4=>Text 17,88,"BISH"
+Abs P=3=>Text 17,88,"KNIG"
+Abs P=2=>Text 17,88,"ROOK"
+Abs P=1=>Text 17,88,"PAWN"
+Goto Z
+Lbl 2
+I=6248=>Goto Z
+Text 49,62,"CHECKING MOVE"
+If M=V And N=W
+Then 6248->O:Goto C
+IfEnd
+If Frac (P/6)=0
+Then Prog "C P KING":Goto B
+IfEnd
+If Frac (P/5)=0
+Then Prog "C P QUEE":Goto B
+IfEnd
+If Frac (P/4)=0
+Then Prog "C P BISH":Goto B
+IfEnd
+If Frac (P/3)=0
+Then Prog "C P KNIG":Goto B
+IfEnd
+If Frac (P/2)=0
+Then Prog "C P ROOK":Goto B
+IfEnd
+If Frac (P/1)=0
+Then Prog "C P PAWN":Goto B
+IfEnd
+Lbl B
+O=6248=>Goto C
+J=6248=>Goto Z
+2->E:Prog "C EMPTY"
+Text 49,62,"CHECKING CHESS"
+If r=1 And U<>9514
+Then Goto Z
+IfEnd
+If r=2 And U<>4159
+Then Goto Z
+IfEnd
+0->Mat C[M,N]
+Mat C[V,W]->Z
+P->Mat C[V,W]
+V->E:W->F
+For 1->A To 8
+For 1->B To 8
+If r=1 And Mat C[A,B]=6
+Then A->V:B->W
+IfEnd
+If r=2 And Mat C[A,B]=-6
+Then A->V:B->W
+IfEnd
+Next 
+Next 
+Prog "C CHCK K"
+P->Mat C[M,N]
+E->V:F->W
+Z->Mat C[V,W]
+2->Z
+O=6248=>Goto C
+0->U
+Goto Z
+Lbl C
+2->E:Prog "C EMPTY"
+Text 49,62,"INVALED MOVE"
+Text 55,62,"PRESS EXE"Disp
+Z-1->Z
+Goto Z
+Lbl 3
+J=6248=>Goto Z
+Text 49,62,"CHECKING CHESS"
+Abs P=6=>Goto Z
+8426->O
+Prog "C CHCK P"
+O=8426=>0->U
+O=8426=>Goto Z
+r=1=>4159->U
+r=2=>9514->U
+2->E:Prog "C EMPTY"
+Text 49,62,"CHECK"
+Text 55,62,"MATE: Y OR N?"
+Orange Text 55,87,"Y    N"
+Do
+Getkey->A
+LpWhile A<>32 And A<>64
+Orange Text 55,87,"      "
+A=64=>0->theta
+A=64=>Goto Z
+r=1=>8426->theta
+r=2=>6248->theta
+Goto Z
+Lbl Z
+2->E:Prog "C EMPTY"
+
+
+File Name:C LOG MV
+
+H=6248=>Goto Z
+Text 49,62,"LOGGING MOVE"
+M->Mat D[1,1]
+N->Mat D[1,2]
+V->Mat D[1,3]
+W->Mat D[1,4]
+r=1=>Goto A
+r=2=>Goto B
+Lbl A
+Mat D[2,1]->Mat D[3,1]
+Mat D[2,2]->Mat D[3,2]
+Mat D[2,3]->Mat D[3,3]
+Mat D[2,4]->Mat D[3,4]
+Mat D[1,1]->Mat D[2,1]
+Mat D[1,2]->Mat D[2,2]
+Mat D[1,3]->Mat D[2,3]
+Mat D[1,4]->Mat D[2,4]
+Mat D[4,1]->Mat D[5,1]
+Mat D[4,2]->Mat D[5,2]
+Mat D[4,3]->Mat D[5,3]
+Mat D[4,4]->Mat D[5,4]
+0->Mat D[4,1]
+0->Mat D[4,2]
+0->Mat D[4,3]
+0->Mat D[4,4]
+Goto C
+Lbl B
+Mat D[1,1]->Mat D[4,1]
+Mat D[1,2]->Mat D[4,2]
+Mat D[1,3]->Mat D[4,3]
+Mat D[1,4]->Mat D[4,4]
+Goto D
+Lbl C
+Text 33,84,"  "
+Text 33,95,"  "
+Text 41,84,"  "
+Mat D[3,1]=0=>Text 41,84," "
+Mat D[3,1]=1=>Text 41,84,"8"
+Mat D[3,1]=2=>Text 41,84,"7"
+Mat D[3,1]=3=>Text 41,84,"6"
+Mat D[3,1]=4=>Text 41,84,"5"
+Mat D[3,1]=5=>Text 41,84,"4"
+Mat D[3,1]=6=>Text 41,84,"3"
+Mat D[3,1]=7=>Text 41,84,"2"
+Mat D[3,1]=8=>Text 41,84,"1"
+Mat D[3,2]=0=>Text 41,88," "
+Mat D[3,2]=1=>Text 41,88,"A"
+Mat D[3,2]=2=>Text 41,88,"B"
+Mat D[3,2]=3=>Text 41,88,"C"
+Mat D[3,2]=4=>Text 41,88,"D"
+Mat D[3,2]=5=>Text 41,88,"E"
+Mat D[3,2]=6=>Text 41,88,"F"
+Mat D[3,2]=7=>Text 41,88,"G"
+Mat D[3,2]=8=>Text 41,88,"H"
+Text 41,95,"  "
+Mat D[3,3]=0=>Text 41,95," "
+Mat D[3,3]=1=>Text 41,95,"8"
+Mat D[3,3]=2=>Text 41,95,"7"
+Mat D[3,3]=3=>Text 41,95,"6"
+Mat D[3,3]=4=>Text 41,95,"5"
+Mat D[3,3]=5=>Text 41,95,"4"
+Mat D[3,3]=6=>Text 41,95,"3"
+Mat D[3,3]=7=>Text 41,95,"2"
+Mat D[3,3]=8=>Text 41,95,"1"
+Mat D[3,4]=0=>Text 41,99," "
+Mat D[3,4]=1=>Text 41,99,"A"
+Mat D[3,4]=2=>Text 41,99,"B"
+Mat D[3,4]=3=>Text 41,99,"C"
+Mat D[3,4]=4=>Text 41,99,"D"
+Mat D[3,4]=5=>Text 41,99,"E"
+Mat D[3,4]=6=>Text 41,99,"F"
+Mat D[3,4]=7=>Text 41,99,"G"
+Mat D[3,4]=8=>Text 41,99,"H"
+Text 33,105,"  "
+Text 33,116,"  "
+Text 41,105,"  "
+Mat D[5,1]=0=>Text 41,105," "
+Mat D[5,1]=1=>Text 41,105,"8"
+Mat D[5,1]=2=>Text 41,105,"7"
+Mat D[5,1]=3=>Text 41,105,"6"
+Mat D[5,1]=4=>Text 41,105,"5"
+Mat D[5,1]=5=>Text 41,105,"4"
+Mat D[5,1]=6=>Text 41,105,"3"
+Mat D[5,1]=7=>Text 41,105,"2"
+Mat D[5,1]=8=>Text 41,105,"1"
+Mat D[5,2]=0=>Text 41,109," "
+Mat D[5,2]=1=>Text 41,109,"A"
+Mat D[5,2]=2=>Text 41,109,"B"
+Mat D[5,2]=3=>Text 41,109,"C"
+Mat D[5,2]=4=>Text 41,109,"D"
+Mat D[5,2]=5=>Text 41,109,"E"
+Mat D[5,2]=6=>Text 41,109,"F"
+Mat D[5,2]=7=>Text 41,109,"G"
+Mat D[5,2]=8=>Text 41,109,"H"
+Text 41,116,"  "
+Mat D[5,3]=0=>Text 41,116," "
+Mat D[5,3]=1=>Text 41,116,"8"
+Mat D[5,3]=2=>Text 41,116,"7"
+Mat D[5,3]=3=>Text 41,116,"6"
+Mat D[5,3]=4=>Text 41,116,"5"
+Mat D[5,3]=5=>Text 41,116,"4"
+Mat D[5,3]=6=>Text 41,116,"3"
+Mat D[5,3]=7=>Text 41,116,"2"
+Mat D[5,3]=8=>Text 41,116,"1"
+Mat D[5,4]=0=>Text 41,120," "
+Mat D[5,4]=1=>Text 41,120,"A"
+Mat D[5,4]=2=>Text 41,120,"B"
+Mat D[5,4]=3=>Text 41,120,"C"
+Mat D[5,4]=4=>Text 41,120,"D"
+Mat D[5,4]=5=>Text 41,120,"E"
+Mat D[5,4]=6=>Text 41,120,"F"
+Mat D[5,4]=7=>Text 41,120,"G"
+Mat D[5,4]=8=>Text 41,120,"H"
+Mat D[2,1]=0=>Text 33,84," "
+Mat D[2,1]=1=>Text 33,84,"8"
+Mat D[2,1]=2=>Text 33,84,"7"
+Mat D[2,1]=3=>Text 33,84,"6"
+Mat D[2,1]=4=>Text 33,84,"5"
+Mat D[2,1]=5=>Text 33,84,"4"
+Mat D[2,1]=6=>Text 33,84,"3"
+Mat D[2,1]=7=>Text 33,84,"2"
+Mat D[2,1]=8=>Text 33,84,"1"
+Mat D[2,2]=0=>Text 33,88," "
+Mat D[2,2]=1=>Text 33,88,"A"
+Mat D[2,2]=2=>Text 33,88,"B"
+Mat D[2,2]=3=>Text 33,88,"C"
+Mat D[2,2]=4=>Text 33,88,"D"
+Mat D[2,2]=5=>Text 33,88,"E"
+Mat D[2,2]=6=>Text 33,88,"F"
+Mat D[2,2]=7=>Text 33,88,"G"
+Mat D[2,2]=8=>Text 33,88,"H"
+Mat D[2,3]=0=>Text 33,95," "
+Mat D[2,3]=1=>Text 33,95,"8"
+Mat D[2,3]=2=>Text 33,95,"7"
+Mat D[2,3]=3=>Text 33,95,"6"
+Mat D[2,3]=4=>Text 33,95,"5"
+Mat D[2,3]=5=>Text 33,95,"4"
+Mat D[2,3]=6=>Text 33,95,"3"
+Mat D[2,3]=7=>Text 33,95,"2"
+Mat D[2,3]=8=>Text 33,95,"1"
+Mat D[2,4]=0=>Text 33,99," "
+Mat D[2,4]=1=>Text 33,99,"A"
+Mat D[2,4]=2=>Text 33,99,"B"
+Mat D[2,4]=3=>Text 33,99,"C"
+Mat D[2,4]=4=>Text 33,99,"D"
+Mat D[2,4]=5=>Text 33,99,"E"
+Mat D[2,4]=6=>Text 33,99,"F"
+Mat D[2,4]=7=>Text 33,99,"G"
+Mat D[2,4]=8=>Text 33,99,"H"
+Goto Z
+Lbl D
+Mat D[4,1]=0=>Text 33,105," "
+Mat D[4,1]=1=>Text 33,105,"8"
+Mat D[4,1]=2=>Text 33,105,"7"
+Mat D[4,1]=3=>Text 33,105,"6"
+Mat D[4,1]=4=>Text 33,105,"5"
+Mat D[4,1]=5=>Text 33,105,"4"
+Mat D[4,1]=6=>Text 33,105,"3"
+Mat D[4,1]=7=>Text 33,105,"2"
+Mat D[4,1]=8=>Text 33,105,"1"
+Mat D[4,2]=0=>Text 33,109," "
+Mat D[4,2]=1=>Text 33,109,"A"
+Mat D[4,2]=2=>Text 33,109,"B"
+Mat D[4,2]=3=>Text 33,109,"C"
+Mat D[4,2]=4=>Text 33,109,"D"
+Mat D[4,2]=5=>Text 33,109,"E"
+Mat D[4,2]=6=>Text 33,109,"F"
+Mat D[4,2]=7=>Text 33,109,"G"
+Mat D[4,2]=8=>Text 33,109,"H"
+Mat D[4,3]=0=>Text 33,116," "
+Mat D[4,3]=1=>Text 33,116,"8"
+Mat D[4,3]=2=>Text 33,116,"7"
+Mat D[4,3]=3=>Text 33,116,"6"
+Mat D[4,3]=4=>Text 33,116,"5"
+Mat D[4,3]=5=>Text 33,116,"4"
+Mat D[4,3]=6=>Text 33,116,"3"
+Mat D[4,3]=7=>Text 33,116,"2"
+Mat D[4,3]=8=>Text 33,116,"1"
+Mat D[4,4]=0=>Text 33,120," "
+Mat D[4,4]=1=>Text 33,120,"A"
+Mat D[4,4]=2=>Text 33,120,"B"
+Mat D[4,4]=3=>Text 33,120,"C"
+Mat D[4,4]=4=>Text 33,120,"D"
+Mat D[4,4]=5=>Text 33,120,"E"
+Mat D[4,4]=6=>Text 33,120,"F"
+Mat D[4,4]=7=>Text 33,120,"G"
+Mat D[4,4]=8=>Text 33,120,"H"
+Goto Z
+Lbl Z
+2->E:Prog "C EMPTY"
+
+
+File Name:C OPTN
+
+Lbl 0
+3->F
+Green Text 49,62,"OPTIONS LIST:"
+Text 55,62,"EN/DISABLE: 1-4"
+Lbl 1
+Do:Getkey->A
+LpWhile A<>54 And A<>65 And A<>31
+A=54=>Goto Y
+A=65=>Goto Y
+1->E:Prog "C EMPTY"
+Lbl 2
+Orange Text 49,62,"1"
+G=8426=>Green Text 49,68,"+"
+G=6248=>Orange Text 49,68,"*"
+Text 49,74,"(OWN) PIECE"
+Orange Text 55,62,"2"
+H=8426=>Green Text 55,68,"+"
+H=6248=>Orange Text 55,68,"*"
+Text 55,74,"LOG MOVES"
+Green Text 54,120,"aster"
+Lbl 3
+Do:Getkey->A
+LpWhile A<>54 And A<>65 And A<>72 And A<>62 And A<>31
+A=54=>Goto Y
+A=65=>Goto Y
+A=72=>Goto 6
+A=62=>Goto 7
+Lbl 4
+1->E:Prog "C EMPTY"
+Text 49,62,"3"
+J=6248=>Orange Text 49,62,"3"
+I=8426=>Green Text 49,68,"+"
+I=6248=>Orange Text 49,68,"*"
+Text 49,74,"CHECK MOVES"
+Text 55,65,"4"
+I=8426=>Orange Text 55,65,"4"
+J=8426=>Green Text 55,71,"+"
+J=6248=>Orange Text 55,71,"*"
+Text 55,83,"''  CHESS"
+Green Text 54,120,"aster"
+Lbl 5
+Do:Getkey->A
+LpWhile A<>54 And A<>65 And A<>52 And A<>73 And A<>31
+A=54=>Goto Y
+A=65=>Goto Y
+A=52=>Goto 8
+A=73=>Goto 9
+Goto Z
+Lbl 6
+If G=8426
+Then 6248->G:Green Text 49,68," ":Orange Text 49,68,"*":Goto 3
+Else 8426->G:Orange Text 49,68," ":Green Text 49,68,"+":Goto 3
+Lbl 7
+If H=8426
+Then 6248->H:Green Text 55,68," ":Orange Text 55,68,"*":Goto 3
+Else 8426->H:Orange Text 55,68," ":Green Text 55,68,"+":Goto 3
+Lbl 8
+J=8426=>Goto 5
+If I=8426
+Then 6248->I:Green Text 49,68," ":Orange Text 49,68,"*":Orange Text 55,65," ":Goto 5
+Else 8426->I:Orange Text 49,68," ":Green Text 49,68,"+":Orange Text 55,65,"4":Goto 5
+Lbl 9
+I=6248=>Goto 5
+If J=8426
+Then 6248->J:Green Text 55,71," ":Orange Text 55,71,"*":Orange Text 49,62,"3":Goto 5
+Else 8426->J:Orange Text 55,71," ":Green Text 55,71,"+":Orange Text 49,62," ":Goto 5
+Lbl Y
+1->E:Prog "C EMPTY"
+A=54=>Goto 0
+A=65=>3->F
+A=65=>Prog "C HELP"
+1->E:Prog "C EMPTY"
+Goto 0
+Lbl Z
+Orange Text 56,114,"   "
+1->E:Prog "C EMPTY"
+
+
+File Name:C HELP
+
+F=1=>Goto 1
+F=2=>Goto 2
+F=3=>Goto 3
+Lbl 1
+Text 49,62,"MOVE CURSOR TO"
+Text 55,62,"1TH LOCATION"
+Orange Text 56,114,"EXE"
+Goto Z
+Lbl 2
+Text 49,62,"MOVE CURSOR TO"
+Text 55,62,"END LOCATION"
+Orange Text 56,114,"EXE"
+Goto Z
+Lbl 3
+Text 49,62,"PRESS EXE TO GO"
+Text 55,62,"TO NEXT MENU"
+Orange Text 56,114,"EXE"
+Goto Z
+Lbl Z
+Do:Getkey->A
+LpWhile A<>31
+Orange Text 56,114,"   "
+1->E:Prog "C EMPTY"
+
+
+File Name:C END
+
+theta=8426=>Text 49,62,"PLAYER 1 WINS!"
+theta=6248=>Text 49,62,"PLAYER 2 WINS!"
+theta=8642=>Text 49,62,"IT'S A DRAW..."
+0->r:0->theta:0->A~Z
+Fill(0,Mat C)
+Fill(0,Mat D)
+
+
+File Name:C P KING
+
+I=6248=>Goto 0
+If M-V<>0 Or Abs (N-W)<>2
+Then Goto 3
+IfEnd
+Lbl 0
+If r=1 And Mat D[6,1]=8426 And W=3
+Then Goto 1
+IfEnd
+If r=1 And Mat D[6,2]=8426 And W=7
+Then Goto 1
+IfEnd
+If r=2 And Mat D[6,3]=8426 And W=3
+Then Goto 1
+IfEnd
+If r=2 And Mat D[6,4]=8426 And W=7
+Then Goto 1
+IfEnd
+Goto X
+Lbl 1
+W=3=>-1->K
+W=7=>1->K
+If Mat C[M,N+K]<>0
+Then Goto X
+IfEnd
+If Mat C[M,N+2K]<>0
+Then Goto X
+IfEnd
+If W=3 And Mat C[M,N+3K]<>0
+Then Goto X
+IfEnd
+J=6248=>Goto 2
+V->Mat D[9,1]
+W->Mat D[9,2]
+N+K->W
+Prog "C CHCK K"
+Mat D[9,2]=3=>-1->K
+Mat D[9,2]=7=>1->K
+N+2K->W
+Prog "C CHCK K"
+If W=3
+Then N+(3*-1)->W:Prog "C CHCK K"
+IfEnd
+Mat D[9,1]->V
+Mat D[9,2]->W
+Lbl 2
+4756->O:Goto Z
+I=6248=>Goto Z
+Lbl 3
+If Abs (M-V)>1 Or Abs (N-W)>1
+Then Goto X
+IfEnd
+r=2=>Goto 4
+If Mat C[V,W]>0
+Then Goto X
+Else Goto Z
+Lbl 4
+If Mat C[V,W]<0
+Then Goto X
+Else Goto Z
+Lbl X
+6248->O
+Lbl Z
+If r=1 And O<>6248
+Then 6248->Mat D[6,1]:6248->Mat D[6,2]
+IfEnd
+If r=2 And O<>6248
+Then 6248->Mat D[6,3]:6248->Mat D[6,4]
+IfEnd
+
+
+File Name:C P QUEE
+
+If Abs (M-V)=Abs (N-W)
+Then Goto 1
+IfEnd
+If M=V Or N=W
+Then Goto 5
+Else Goto X
+Lbl 1
+M>V=>-1->K
+M<V=>1->K
+N>W=>-1->L
+N<W=>1->L
+M->A
+N->B
+Lbl 2
+A+K->A
+A=V=>Goto 3
+B+L->B
+B=W=>Goto 3
+If Mat C[A,B]<>0
+Then Goto X
+Else Goto 2
+Lbl 3
+r=2=>Goto 4
+If Mat C[V,W]>0
+Then Goto X
+Else Goto Z
+Lbl 4
+If Mat C[V,W]<0
+Then Goto X
+Else Goto Z
+Lbl 5
+N<>W=>Goto 7
+M>V=>-1->K
+M<V=>1->K
+M->A
+Lbl 6
+A+K->A
+A=V=>Goto 9
+If Mat C[A,N]<>0
+Then Goto X
+Else Goto 6
+Lbl 7
+N>W=>-1->K
+N<W=>1->K
+N->A
+Lbl 8
+A+K->A
+A=W=>Goto 9
+If Mat C[M,A]<>0
+Then Goto X
+Else Goto 8
+Lbl 9
+r=2=>Goto 0
+If Mat C[V,W]>0
+Then Goto X
+Else Goto Z
+Lbl 0
+If Mat C[V,W]<0
+Then Goto X
+Else Goto Z
+Lbl X
+6248->O
+Lbl Z
+
+
+File Name:C P BISH
+
+If Abs (M-V)<>Abs (N-W)
+Then Goto X
+IfEnd
+M>V=>-1->K
+M<V=>1->K
+N>W=>-1->L
+N<W=>1->L
+M->A
+N->B
+Lbl 1
+A+K->A
+A=V=>Goto 2
+B+L->B
+B=W=>Goto 2
+If Mat C[A,B]<>0
+Then Goto X
+IfEnd
+Goto 1
+Lbl 2
+r=2=>Goto 3
+If Mat C[V,W]>0
+Then Goto X
+Else Goto Z
+Lbl 3
+If Mat C[V,W]<0
+Then Goto X
+Else Goto Z
+Lbl X
+6248->O
+Lbl Z
+
+
+File Name:C P KNIG
+
+If Abs (M-V)=2 And Abs (N-W)=1
+Then Goto 1
+IfEnd
+If Abs (M-V)=1 And Abs (N-W)=2
+Then Goto 1
+IfEnd
+Goto X
+Lbl 1
+r=2=>Goto 2
+If Mat C[V,W]>0
+Then Goto X
+Else Goto Z
+Lbl 2
+If Mat C[V,W]<0
+Then Goto X
+Else Goto Z
+Lbl X
+6248->O
+Lbl Z
+
+
+File Name:C P ROOK
+
+If M<>V And N<>W
+Then Goto X
+IfEnd
+N<>W=>Goto 2
+M>V=>-1->K
+M<V=>1->K
+M->A
+Lbl 1
+A+K->A
+A=V=>Goto 4
+If Mat C[A,N]<>0
+Then Goto X
+Else Goto 1
+Lbl 2
+N>W=>-1->K
+N<W=>1->K
+N->A
+Lbl 3
+A+K->A
+A=W=>Goto 4
+If Mat C[M,A]<>0
+Then Goto X
+Else Goto 3
+Lbl 4
+r=2=>Goto 5
+If Mat C[V,W]>0
+Then Goto X
+Else Goto Z
+Lbl 5
+If Mat C[V,W]<0
+Then Goto X
+Else Goto Z
+Lbl X
+6248->O
+Lbl Z
+If r=1 And M=8 And N=1 And O=8426
+Then 6248->Mat D[6,1]
+IfEnd
+If r=1 And M=8 And N=8 And O=8426
+Then 6248->Mat D[6,2]
+IfEnd
+If r=2 And M=1 And N=1 And O=8426
+Then 6248->Mat D[6,3]
+IfEnd
+If r=2 And M=1 And N=8 And O=8426
+Then 6248->Mat D[6,4]
+IfEnd
+
+
+File Name:C P PAWN
+
+I=6248=>Goto Y
+r=2=>Goto 3
+If M<=V Or M-V>2
+Then Goto X
+IfEnd
+N=W=>Goto 1
+If Abs (N-W)>1 Or M-V>1 Or Mat C[V,W]>=0
+Then Goto X
+Else Goto Y
+Lbl 1
+M-V=2=>Goto 2
+If Mat C[V,W]<>0
+Then Goto X
+Else Goto Y
+Lbl 2
+If M<>7 Or Mat C[V+1,W]<>0 Or Mat C[V,W]<>0
+Then Goto X
+Else Goto Z
+Lbl 3
+If M>=V Or V-M>2
+Then Goto X
+IfEnd
+N=W=>Goto 4
+If Abs (N-W)>1 Or V-M>1 Or Mat C[V,W]<=0
+Then Goto X
+Else Goto Y
+Lbl 4
+V-M=2=>Goto 5
+If Mat C[V,W]<>0
+Then Goto X
+Else Goto Y
+Lbl 5
+If M<>2 And Mat C[V-1,W]<>0 Or Mat C[V,W]<>0
+Then Goto X
+Else Goto Z
+Lbl X
+6248->O:Goto Z
+Lbl Y
+If r=1 And V=1
+Then 6574->O:Goto Z
+IfEnd
+If r=2 And V=8
+Then 6574->O:Goto Z
+Goto Z
+Lbl Z
+
+
+File Name:C PAWN S
+
+2->E:Prog "C EMPTY"
+Text 49,62,"CHOOSE NEW:"
+Text 55,62,"Q,B,K,R?"
+Orange Text 55,62,"Q B K R"
+Lbl 0
+0->A:0->P
+Do
+Getkey->A
+LpWhile A=0
+r=2=>Goto 1
+A=63=>5->P
+A=66=>4->P
+A=35=>3->P
+A=53=>2->P
+P=0=>Goto 0
+Goto Z
+Lbl 1
+A=63=>-5->P
+A=66=>-4->P
+A=35=>-3->P
+A=53=>-2->P
+Lbl Z
+Mat C[M,N]->Mat C[V,W]
+
+
+File Name:C KING S
+
+If r=1
+Then 8->M:2->P:54->Q:54->S:8->V:Goto 1
+Else 1->M:-2->P:5->Q:5->S:1->V:Goto 1
+Lbl 1
+If W=3
+Then 1->N:5->R:26->T:4->W:Goto 2
+Else 8->N:54->R:40->T:6->W:Goto 2
+Lbl 2
+
+
+File Name:C CHCK P
+
+r=1=>-6->B
+r=2=>6->B
+Abs P=1=>Goto 1
+Abs P=2=>Goto 2
+Abs P=3=>Goto 3
+Abs P=4=>Goto 4
+Abs P=5=>Goto 5
+Lbl 1
+r=1=>V-1->K
+r=2=>V+1->K
+W-1->L
+Mat C[K,L]=B=>Goto Y
+W+1->L
+Mat C[K,L]=B=>Goto Y
+Goto Z
+Lbl 2
+V->K:W->L
+Lbl A
+K-1->K
+K=0=>Goto B
+Mat C[K,L]=0=>Goto A
+Mat C[K,L]=B=>Goto Y
+Lbl B
+V->K:W->L
+Lbl C
+L+1->L
+L=9=>Goto D
+Mat C[K,L]=0=>Goto C
+Mat C[K,L]=B=>Goto Y
+Lbl D
+V->K:W->L
+Lbl E
+K+1->K
+K=9=>Goto F
+Mat C[K,L]=0=>Goto E
+Mat C[K,L]=B=>Goto Y
+Lbl F
+V->K:W->L
+Lbl G
+L-1->L
+If L=0 And Z=8426
+Then Goto V
+IfEnd
+L=0=>Goto Z
+Mat C[K,L]=0=>Goto G
+Mat C[K,L]=B=>Goto Y
+Z=8426=>Goto V
+Goto Z
+Lbl 3
+V-2->K:W+1->L
+K<1=>Goto H
+L>8=>Goto H
+Mat C[K,L]=B=>Goto Y
+Lbl H
+V-1->K:W+2->L
+K<1=>Goto I
+L>8=>Goto I
+Mat C[K,L]=B=>Goto Y
+Lbl I
+V+1->K:W+2->L
+K>8=>Goto J
+L>8=>Goto J
+Mat C[K,L]=B=>Goto Y
+Lbl J
+V+2->K:W+1->L
+K>8=>Goto K
+L>8=>Goto K
+Mat C[K,L]=B=>Goto Y
+Lbl K
+V+2->K:W-1->L
+K>8=>Goto L
+L<1=>Goto L
+Mat C[K,L]=B=>Goto Y
+Lbl L
+V+1->K:W-2->L
+K>8=>Goto M
+L<1=>Goto M
+Mat C[K,L]=B=>Goto Y
+Lbl M
+V-1->K:W-2->L
+K<1=>Goto N
+L<1=>Goto N
+Mat C[K,L]=B=>Goto Y
+Lbl N
+V-2->K:W-1->L
+K<1=>Goto Z
+L<1=>Goto Z
+Mat C[K,L]=B=>Goto Y
+Goto Z
+Lbl 4
+V->K:W->L
+Lbl O
+K-1->K:L+1->L
+K=0=>Goto P
+L=9=>Goto P
+Mat C[K,L]=0=>Goto O
+Mat C[K,L]=B=>Goto Y
+Lbl P
+V->K:W->L
+Lbl Q
+K+1->K:L+1->L
+K=9=>Goto R
+L=9=>Goto R
+Mat C[K,L]=0=>Goto Q
+Mat C[K,L]=B=>Goto Y
+Lbl R
+V->K:W->L
+Lbl S
+K+1->K:L-1->L
+K=9=>Goto T
+L=0=>Goto T
+Mat C[K,L]=0=>Goto S
+Mat C[K,L]=B=>Goto Y
+Lbl T
+V->K:W->L
+Lbl U
+K-1->K:L-1->L
+If K=0 And Z=8426
+Then Goto W
+IfEnd
+If L=0 And Z=8426
+Then Goto W
+IfEnd
+K=0=>Goto Z
+L=0=>Goto Z
+Mat C[K,L]=0=>Goto U
+Mat C[K,L]=B=>Goto Y
+Z=8426=>Goto W
+Goto Z
+Lbl 5
+8426->Z
+Goto 2
+Lbl V
+Goto 4
+Lbl W
+2->Z
+Goto Z
+Lbl Y
+6248->O
+Lbl Z
+
+
+File Name:C CHCK K
+
+r=1=>-3->B
+r=2=>3->B
+V-2->K:W+1->L
+K<1=>Goto A
+L>8=>Goto A
+Mat C[K,L]=B=>Goto Y
+Lbl A
+V-1->K:W+2->L
+K<1=>Goto B
+L>8=>Goto B
+Mat C[K,L]=B=>Goto Y
+Lbl B
+V+1->K:W+2->L
+K>8=>Goto C
+L>8=>Goto C
+Mat C[K,L]=B=>Goto Y
+Lbl C
+V+2->K:W+1->L
+K>8=>Goto D
+L>8=>Goto D
+Mat C[K,L]=B=>Goto Y
+Lbl D
+V+2->K:W-1->L
+K>8=>Goto E
+L<1=>Goto E
+Mat C[K,L]=B=>Goto Y
+Lbl E
+V+1->K:W-2->L
+K>8=>Goto F
+L<1=>Goto F
+Mat C[K,L]=B=>Goto Y
+Lbl F
+V-1->K:W-2->L
+K<1=>Goto G
+L<1=>Goto G
+Mat C[K,L]=B=>Goto Y
+Lbl G
+V-2->K:W-1->L
+K<1=>Goto H
+L<1=>Goto H
+Mat C[K,L]=B=>Goto Y
+Lbl H
+V->K:W->L
+Lbl I
+L-1->L
+L=0=>Goto J
+If Mat C[K,L]<>0
+Then Mat C[K,L]->Mat D[7,1]:Goto J
+IfEnd
+Goto I
+Lbl J
+r=1=>-5->A:r=2=>5->A
+r=1=>-2->B:r=1=>2->B
+Mat D[7,1]=A=>Goto Y
+Mat D[7,1]=B=>Goto Y
+V->K:W->L
+Lbl K
+K+1->K
+L-1->L
+K=9=>Goto L
+L=0=>Goto L
+If Mat C[K,L]<>0
+Then Mat C[K,L]->Mat D[7,2]:Goto L
+IfEnd
+Goto K
+Lbl L
+r=1=>-4->B:r=2=>4->B
+Mat D[7,2]=A=>Goto Y
+Mat D[7,2]=B=>Goto Y
+If Mat D[7,2]=1 And K-1=V And L+1=W
+Then Goto Y
+IfEnd
+V->K:W->L
+Lbl M
+K+1->K
+K=9=>Goto N
+If Mat C[K,L]<>0
+Then Mat C[K,L]->Mat D[7,3]:Goto N
+IfEnd
+Goto M
+Lbl N
+r=1=>-2->B:r=2=>2->B
+Mat D[7,3]=A=>Goto Y
+Mat D[7,3]=B=>Goto Y
+V->K:W->L
+Lbl O
+K+1->K
+L+1->L
+K=9=>Goto P
+L=9=>Goto P
+If Mat C[K,L]<>0
+Then Mat C[K,L]->Mat D[7,4]:Goto P
+IfEnd
+Goto O
+Lbl P
+r=1=>-4->B:r=2=>4->B
+Mat D[7,4]=A=>Goto Y
+Mat D[7,4]=B=>Goto Y
+If Mat D[7,4]=1 And K-1=V And L-1=W
+Then Goto Y
+IfEnd
+V->K:W->L
+Lbl Q
+L+1->L
+L=9=>Goto R
+If Mat C[K,L]<>0
+Then Mat C[K,L]->Mat D[8,1]:Goto R
+IfEnd
+Goto Q
+Lbl R
+r=1=>-2->B:r=2=>2->B
+Mat D[8,1]=A=>Goto Y
+Mat D[8,1]=B=>Goto Y
+V->K:W->L
+Lbl S
+K-1->K
+L+1->L
+K=0=>Goto T
+L=9=>Goto T
+If Mat C[K,L]<>0
+Then Mat C[K,L]->Mat D[8,2]:Goto T
+IfEnd
+Goto S
+Lbl T
+r=1=>-4->B:r=2=>4->B
+Mat D[8,2]=A=>Goto Y
+Mat D[8,2]=B=>Goto Y
+If Mat D[8,2]=-1 And K+1=V And L-1=W
+Then Goto Y
+IfEnd
+V->K:W->L
+Lbl U
+K-1->K
+K=0=>Goto V
+If Mat C[K,L]<>0
+Then Mat C[K,L]->Mat D[8,3]:Goto V
+IfEnd
+Goto U
+Lbl V
+r=1=>-2->B:r=2=>2->B
+Mat D[8,3]=A=>Goto Y
+Mat D[8,3]=B=>Goto Y
+V->K:W->L
+Lbl W
+K-1->K
+L-1->L
+K=0=>Goto X
+L=0=>Goto X
+If Mat C[K,L]<>0
+Then Mat C[K,L]->Mat D[8,4]:Goto X
+IfEnd
+Goto W
+Lbl X
+r=1=>-4->B:r=2=>4->B
+Mat D[8,4]=A=>Goto Y
+Mat D[8,4]=B=>Goto Y
+If Mat D[8,4]=Abs -1 And K+1=V And L+1=W
+Then Goto Y
+IfEnd
+Goto Z
+Lbl Y
+6248->O
+Lbl Z
+
+
+File Name:C MOVE
+
+Green PxlOn 1,126Disp
+Lbl 0
+"PIECE? (-6/6)"?->P
+P<-6=>Goto 0
+P=0=>Goto 0
+P>6=>Goto 0
+Lbl 1
+10->A:20->B:30->C:40->D:50->E:60->F:70->G:80->H
+"OLD (A/H+1/8)"?->K
+K<11=>Goto 1
+K>88=>Goto 1
+Lbl 2
+"NEW (A/H+1/8)"?->L
+L<11=>Goto 2
+L>88=>Goto 2
+0->I
+Lbl 3
+I+10->I
+If K-I<10
+Then I/10->N:K-I->M:0->J:Goto 4
+IfEnd
+Goto 3
+Lbl 4
+J+10->J
+If L-J<10
+Then J/10->W:L-J->V:Goto 5
+IfEnd
+Goto 4
+Lbl 5
+0->Mat C[M,N]
+P->Mat C[V,W]
+(M*7)-2->Q:(N*7)-2->R
+(V*7)-2->S:(W*7)-2->T
+Prog "C DRAW P"
+Green PxlOn 1,126Disp
+Goto 0

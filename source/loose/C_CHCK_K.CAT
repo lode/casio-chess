@@ -1,0 +1,178 @@
+%Header Record
+Format:TXT
+Communication SW:0
+Data Type:PG
+Capacity:1504
+File Name:C CHCK K
+Group Name:
+Password:
+Option1:NL
+Option2:
+Option3:
+Option4:
+%Data Record
+\r=1\=>\(-)3\->B
+\r=2\=>3\->B
+V-2\->K:W+1\->L
+K<1\=>\GotoA
+L>8\=>\GotoA
+\Mat C[K,L]=B\=>\GotoY
+\Lbl A
+V-1\->K:W+2\->L
+K<1\=>\GotoB
+L>8\=>\GotoB
+\Mat C[K,L]=B\=>\GotoY
+\Lbl B
+V+1\->K:W+2\->L
+K>8\=>\GotoC
+L>8\=>\GotoC
+\Mat C[K,L]=B\=>\GotoY
+\Lbl C
+V+2\->K:W+1\->L
+K>8\=>\GotoD
+L>8\=>\GotoD
+\Mat C[K,L]=B\=>\GotoY
+\Lbl D
+V+2\->K:W-1\->L
+K>8\=>\GotoE
+L<1\=>\GotoE
+\Mat C[K,L]=B\=>\GotoY
+\Lbl E
+V+1\->K:W-2\->L
+K>8\=>\GotoF
+L<1\=>\GotoF
+\Mat C[K,L]=B\=>\GotoY
+\Lbl F
+V-1\->K:W-2\->L
+K<1\=>\GotoG
+L<1\=>\GotoG
+\Mat C[K,L]=B\=>\GotoY
+\Lbl G
+V-2\->K:W-1\->L
+K<1\=>\GotoH
+L<1\=>\GotoH
+\Mat C[K,L]=B\=>\GotoY
+\Lbl H
+V\->K:W\->L
+\Lbl I
+L-1\->L
+L=0\=>\GotoJ
+\If \Mat C[K,L]\<>0
+\Then \Mat C[K,L]\->\Mat D[7,1]:\GotoJ
+\IfEnd
+\GotoI
+\Lbl J
+\r=1\=>\(-)5\->A:\r=2\=>5\->A
+\r=1\=>\(-)2\->B:\r=1\=>2\->B
+\Mat D[7,1]=A\=>\GotoY
+\Mat D[7,1]=B\=>\GotoY
+V\->K:W\->L
+\Lbl K
+K+1\->K
+L-1\->L
+K=9\=>\GotoL
+L=0\=>\GotoL
+\If \Mat C[K,L]\<>0
+\Then \Mat C[K,L]\->\Mat D[7,2]:\GotoL
+\IfEnd
+\GotoK
+\Lbl L
+\r=1\=>\(-)4\->B:\r=2\=>4\->B
+\Mat D[7,2]=A\=>\GotoY
+\Mat D[7,2]=B\=>\GotoY
+\If \Mat D[7,2]=1\ And K-1=V\ And L+1=W
+\Then \GotoY
+\IfEnd
+V\->K:W\->L
+\Lbl M
+K+1\->K
+K=9\=>\GotoN
+\If \Mat C[K,L]\<>0
+\Then \Mat C[K,L]\->\Mat D[7,3]:\GotoN
+\IfEnd
+\GotoM
+\Lbl N
+\r=1\=>\(-)2\->B:\r=2\=>2\->B
+\Mat D[7,3]=A\=>\GotoY
+\Mat D[7,3]=B\=>\GotoY
+V\->K:W\->L
+\Lbl O
+K+1\->K
+L+1\->L
+K=9\=>\GotoP
+L=9\=>\GotoP
+\If \Mat C[K,L]\<>0
+\Then \Mat C[K,L]\->\Mat D[7,4]:\GotoP
+\IfEnd
+\GotoO
+\Lbl P
+\r=1\=>\(-)4\->B:\r=2\=>4\->B
+\Mat D[7,4]=A\=>\GotoY
+\Mat D[7,4]=B\=>\GotoY
+\If \Mat D[7,4]=1\ And K-1=V\ And L-1=W
+\Then \GotoY
+\IfEnd
+V\->K:W\->L
+\Lbl Q
+L+1\->L
+L=9\=>\GotoR
+\If \Mat C[K,L]\<>0
+\Then \Mat C[K,L]\->\Mat D[8,1]:\GotoR
+\IfEnd
+\GotoQ
+\Lbl R
+\r=1\=>\(-)2\->B:\r=2\=>2\->B
+\Mat D[8,1]=A\=>\GotoY
+\Mat D[8,1]=B\=>\GotoY
+V\->K:W\->L
+\Lbl S
+K-1\->K
+L+1\->L
+K=0\=>\GotoT
+L=9\=>\GotoT
+\If \Mat C[K,L]\<>0
+\Then \Mat C[K,L]\->\Mat D[8,2]:\GotoT
+\IfEnd
+\GotoS
+\Lbl T
+\r=1\=>\(-)4\->B:\r=2\=>4\->B
+\Mat D[8,2]=A\=>\GotoY
+\Mat D[8,2]=B\=>\GotoY
+\If \Mat D[8,2]=\(-)1\ And K+1=V\ And L-1=W
+\Then \GotoY
+\IfEnd
+V\->K:W\->L
+\Lbl U
+K-1\->K
+K=0\=>\GotoV
+\If \Mat C[K,L]\<>0
+\Then \Mat C[K,L]\->\Mat D[8,3]:\GotoV
+\IfEnd
+\GotoU
+\Lbl V
+\r=1\=>\(-)2\->B:\r=2\=>2\->B
+\Mat D[8,3]=A\=>\GotoY
+\Mat D[8,3]=B\=>\GotoY
+V\->K:W\->L
+\Lbl W
+K-1\->K
+L-1\->L
+K=0\=>\GotoX
+L=0\=>\GotoX
+\If \Mat C[K,L]\<>0
+\Then \Mat C[K,L]\->\Mat D[8,4]:\GotoX
+\IfEnd
+\GotoW
+\Lbl X
+\r=1\=>\(-)4\->B:\r=2\=>4\->B
+\Mat D[8,4]=A\=>\GotoY
+\Mat D[8,4]=B\=>\GotoY
+\If \Mat D[8,4]=\Abs \(-)1\ And K+1=V\ And L+1=W
+\Then \GotoY
+\IfEnd
+\GotoZ
+\Lbl Y
+6248\->O
+\Lbl Z
+
+%End

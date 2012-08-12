@@ -1,0 +1,81 @@
+%Header Record
+Format:TXT
+Communication SW:0
+Data Type:PG
+Capacity:1018
+File Name:C START
+Group Name:
+Password:
+Option1:NL
+Option2:
+Option3:
+Option4:
+%Data Record
+\Cls
+\Green \F-Line 2,1,125,1
+\Green \F-Line 126,2,126,61
+\Green \F-Line 125,62,2,62
+\Green \F-Line 1,61,1,2
+\F-Line 4,3,59,3
+\F-Line 60,4,60,59
+\F-Line 59,60,4,60
+\F-Line 3,59,3,4
+\For 4\->A \To 59
+\Green \F-Line 4,A,59,A
+\Next 
+\For 4\->A \To 46 \Step 14
+\For 4\->B \To 46 \Step 14
+\Green \Text A,B," "
+\Green \Text A+1,B," "
+\Green \Text A,B+3," "
+\Green \Text A+1,B+3," "
+\Next 
+\Next 
+\For 11\->A \To 53 \Step 14
+\For 11\->B \To 53 \Step 14
+\Green \Text A,B," "
+\Green \Text A+1,B," "
+\Green \Text A,B+3," "
+\Green \Text A+1,B+3," "
+\Next 
+\Next 
+\Prog "C DRAW"
+[[\(-)2,\(-)3,\(-)4,\(-)5,\(-)6,\(-)4,\(-)3,\(-)2][\(-)1,\(-)1,\(-)1,\(-)1,\(-)1,\(-)1,\(-)1,\(-)1][0,0,0,0,0,0,0,0][0,0,0,0,0,0,0,0][0,0,0,0,0,0,0,0][0,0,0,0,0,0,0,0][1,1,1,1,1,1,1,1][2,3,4,5,6,4,3,2]\->\Mat C
+8426\->\Mat D[6,1]
+8426\->\Mat D[6,2]
+8426\->\Mat D[6,3]
+8426\->\Mat D[6,4]
+\Green \Text 3,63,"CHESS  (C) LODEC"
+\Green \F-Line 62,9,124,9
+\Text 11,62,"PLAYER"
+\Text 17,62,"PIECE"
+\Green \F-Line 86,11,86,21
+\Text 11,88,"PL"
+\Green \F-Line 107,11,107,21
+\Text 11,109,"OPTN"
+\Orange \Text 11,109,"O"
+8426\->G
+8426\->H
+8426\->I
+8426\->J
+\Text 17,109,"HELP"
+\Orange \Text 17,109,"H"
+\Green \F-Line 63,23,123,23
+\Text 25,64,"MOVE"
+\Green \F-Line 62,31,124,31
+\Text 33,64,"NEW"
+\Green \F-Line 62,39,124,39
+\Text 41,64,"OLD"
+\Green \F-Line 63,47,123,47
+\Green \F-Line 62,24,62,46
+\Green \F-Line 82,23,82,47
+\Text 25,84,"PL 1"
+\Text 33,91,"\(-)"
+\Text 41,91,"\(-)"
+\Green \F-Line 103,23,103,47
+\Text 25,105,"PL 2"
+\Text 33,112,"\(-)"
+\Text 41,112,"\(-)"
+\Green \F-Line 124,24,124,46
+
+%End

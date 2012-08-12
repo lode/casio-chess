@@ -1,0 +1,155 @@
+%Header Record
+Format:TXT
+Communication SW:0
+Data Type:PG
+Capacity:1099
+File Name:C CHCK P
+Group Name:
+Password:
+Option1:NL
+Option2:
+Option3:
+Option4:
+%Data Record
+\r=1\=>\(-)6\->B
+\r=2\=>6\->B
+\Abs P=1\=>\Goto1
+\Abs P=2\=>\Goto2
+\Abs P=3\=>\Goto3
+\Abs P=4\=>\Goto4
+\Abs P=5\=>\Goto5
+\Lbl 1
+\r=1\=>V-1\->K
+\r=2\=>V+1\->K
+W-1\->L
+\Mat C[K,L]=B\=>\GotoY
+W+1\->L
+\Mat C[K,L]=B\=>\GotoY
+\GotoZ
+\Lbl 2
+V\->K:W\->L
+\Lbl A
+K-1\->K
+K=0\=>\GotoB
+\Mat C[K,L]=0\=>\GotoA
+\Mat C[K,L]=B\=>\GotoY
+\Lbl B
+V\->K:W\->L
+\Lbl C
+L+1\->L
+L=9\=>\GotoD
+\Mat C[K,L]=0\=>\GotoC
+\Mat C[K,L]=B\=>\GotoY
+\Lbl D
+V\->K:W\->L
+\Lbl E
+K+1\->K
+K=9\=>\GotoF
+\Mat C[K,L]=0\=>\GotoE
+\Mat C[K,L]=B\=>\GotoY
+\Lbl F
+V\->K:W\->L
+\Lbl G
+L-1\->L
+\If L=0\ And Z=8426
+\Then \GotoV
+\IfEnd
+L=0\=>\GotoZ
+\Mat C[K,L]=0\=>\GotoG
+\Mat C[K,L]=B\=>\GotoY
+Z=8426\=>\GotoV
+\GotoZ
+\Lbl 3
+V-2\->K:W+1\->L
+K<1\=>\GotoH
+L>8\=>\GotoH
+\Mat C[K,L]=B\=>\GotoY
+\Lbl H
+V-1\->K:W+2\->L
+K<1\=>\GotoI
+L>8\=>\GotoI
+\Mat C[K,L]=B\=>\GotoY
+\Lbl I
+V+1\->K:W+2\->L
+K>8\=>\GotoJ
+L>8\=>\GotoJ
+\Mat C[K,L]=B\=>\GotoY
+\Lbl J
+V+2\->K:W+1\->L
+K>8\=>\GotoK
+L>8\=>\GotoK
+\Mat C[K,L]=B\=>\GotoY
+\Lbl K
+V+2\->K:W-1\->L
+K>8\=>\GotoL
+L<1\=>\GotoL
+\Mat C[K,L]=B\=>\GotoY
+\Lbl L
+V+1\->K:W-2\->L
+K>8\=>\GotoM
+L<1\=>\GotoM
+\Mat C[K,L]=B\=>\GotoY
+\Lbl M
+V-1\->K:W-2\->L
+K<1\=>\GotoN
+L<1\=>\GotoN
+\Mat C[K,L]=B\=>\GotoY
+\Lbl N
+V-2\->K:W-1\->L
+K<1\=>\GotoZ
+L<1\=>\GotoZ
+\Mat C[K,L]=B\=>\GotoY
+\GotoZ
+\Lbl 4
+V\->K:W\->L
+\Lbl O
+K-1\->K:L+1\->L
+K=0\=>\GotoP
+L=9\=>\GotoP
+\Mat C[K,L]=0\=>\GotoO
+\Mat C[K,L]=B\=>\GotoY
+\Lbl P
+V\->K:W\->L
+\Lbl Q
+K+1\->K:L+1\->L
+K=9\=>\GotoR
+L=9\=>\GotoR
+\Mat C[K,L]=0\=>\GotoQ
+\Mat C[K,L]=B\=>\GotoY
+\Lbl R
+V\->K:W\->L
+\Lbl S
+K+1\->K:L-1\->L
+K=9\=>\GotoT
+L=0\=>\GotoT
+\Mat C[K,L]=0\=>\GotoS
+\Mat C[K,L]=B\=>\GotoY
+\Lbl T
+V\->K:W\->L
+\Lbl U
+K-1\->K:L-1\->L
+\If K=0\ And Z=8426
+\Then \GotoW
+\IfEnd
+\If L=0\ And Z=8426
+\Then \GotoW
+\IfEnd
+K=0\=>\GotoZ
+L=0\=>\GotoZ
+\Mat C[K,L]=0\=>\GotoU
+\Mat C[K,L]=B\=>\GotoY
+Z=8426\=>\GotoW
+\GotoZ
+\Lbl 5
+8426\->Z
+\Goto2
+\Lbl V
+\Goto4
+\Lbl W
+2\->Z
+\GotoZ
+\Lbl Y
+6248\->O
+\Lbl Z
+
+%End

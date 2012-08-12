@@ -1,0 +1,129 @@
+%Header Record
+Format:TXT
+Communication SW:0
+Data Type:PG
+Capacity:1239
+File Name:C RECON
+Group Name:
+Password:
+Option1:NL
+Option2:
+Option3:
+Option4:
+%Data Record
+2\->E:\Prog "C EMPTY"
+F=1\=>\Goto1
+F=2\=>\Goto2
+F=3\=>\Goto3
+\Lbl 1
+G=6248\=>\GotoZ
+\Text 49,62,"CHECKING PIECE"
+\If \r=1\ And P>0
+\Then \GotoA
+\IfEnd
+\If \r=2\ And P<0
+\Then \GotoA
+\IfEnd
+2\->E:\Prog "C EMPTY"
+\Text 49,62,"INVALED PIECE"
+\Text 55,62,"PRESS EXE"\Disp2\->E:\Prog "C EMPTY"
+Z-1\->Z
+\GotoZ
+\Lbl A
+\Text 17,88,"     "
+\Abs P=6\=>\Text 17,88,"KING"
+\Abs P=5\=>\Text 17,88,"QUEE"
+\Abs P=4\=>\Text 17,88,"BISH"
+\Abs P=3\=>\Text 17,88,"KNIG"
+\Abs P=2\=>\Text 17,88,"ROOK"
+\Abs P=1\=>\Text 17,88,"PAWN"
+\GotoZ
+\Lbl 2
+I=6248\=>\GotoZ
+\Text 49,62,"CHECKING MOVE"
+\If M=V\ And N=W
+\Then 6248\->O:\GotoC
+\IfEnd
+\If \Frac (P/6)=0
+\Then \Prog "C P KING":\GotoB
+\IfEnd
+\If \Frac (P/5)=0
+\Then \Prog "C P QUEE":\GotoB
+\IfEnd
+\If \Frac (P/4)=0
+\Then \Prog "C P BISH":\GotoB
+\IfEnd
+\If \Frac (P/3)=0
+\Then \Prog "C P KNIG":\GotoB
+\IfEnd
+\If \Frac (P/2)=0
+\Then \Prog "C P ROOK":\GotoB
+\IfEnd
+\If \Frac (P/1)=0
+\Then \Prog "C P PAWN":\GotoB
+\IfEnd
+\Lbl B
+O=6248\=>\GotoC
+J=6248\=>\GotoZ
+2\->E:\Prog "C EMPTY"
+\Text 49,62,"CHECKING CHESS"
+\If \r=1\ And U\<>9514
+\Then \GotoZ
+\IfEnd
+\If \r=2\ And U\<>4159
+\Then \GotoZ
+\IfEnd
+0\->\Mat C[M,N]
+\Mat C[V,W]\->Z
+P\->\Mat C[V,W]
+V\->E:W\->F
+\For 1\->A \To 8
+\For 1\->B \To 8
+\If \r=1\ And \Mat C[A,B]=6
+\Then A\->V:B\->W
+\IfEnd
+\If \r=2\ And \Mat C[A,B]=\(-)6
+\Then A\->V:B\->W
+\IfEnd
+\Next 
+\Next 
+\Prog "C CHCK K"
+P\->\Mat C[M,N]
+E\->V:F\->W
+Z\->\Mat C[V,W]
+2\->Z
+O=6248\=>\GotoC
+0\->U
+\GotoZ
+\Lbl C
+2\->E:\Prog "C EMPTY"
+\Text 49,62,"INVALED MOVE"
+\Text 55,62,"PRESS EXE"\DispZ-1\->Z
+\GotoZ
+\Lbl 3
+J=6248\=>\GotoZ
+\Text 49,62,"CHECKING CHESS"
+\Abs P=6\=>\GotoZ
+8426\->O
+\Prog "C CHCK P"
+O=8426\=>0\->U
+O=8426\=>\GotoZ
+\r=1\=>4159\->U
+\r=2\=>9514\->U
+2\->E:\Prog "C EMPTY"
+\Text 49,62,"CHECK"
+\Text 55,62,"MATE: Y OR N?"
+\Orange \Text 55,87,"Y    N"
+\Do
+\Getkey\->A
+\LpWhile A\<>32\ And A\<>64
+\Orange \Text 55,87,"      "
+A=64\=>0\->\theta
+A=64\=>\GotoZ
+\r=1\=>8426\->\theta
+\r=2\=>6248\->\theta
+\GotoZ
+\Lbl Z
+2\->E:\Prog "C EMPTY"
+
+%End

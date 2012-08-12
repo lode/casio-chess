@@ -1,0 +1,23 @@
+%Header Record
+Format:TXT
+Communication SW:0
+Data Type:PG
+Capacity:119
+File Name:C KING S
+Group Name:
+Password:
+Option1:NL
+Option2:
+Option3:
+Option4:
+%Data Record
+\If \r=1
+\Then 8\->M:2\->P:54\->Q:54\->S:8\->V:\Goto1
+\Else 1\->M:\(-)2\->P:5\->Q:5\->S:1\->V:\Goto1
+\Lbl 1
+\If W=3
+\Then 1\->N:5\->R:26\->T:4\->W:\Goto2
+\Else 8\->N:54\->R:40\->T:6\->W:\Goto2
+\Lbl 2
+
+%End

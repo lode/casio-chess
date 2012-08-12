@@ -1,0 +1,119 @@
+%Header Record
+Format:TXT
+Communication SW:0
+Data Type:PG
+Capacity:814
+File Name:C DRAW
+Group Name:
+Password:
+Option1:NL
+Option2:
+Option3:
+Option4:
+%Data Record
+0\->Z
+\Lbl A
+Z+1\->Z
+Z=33\=>\GotoZ
+\If Z=1
+\Then \(-)2\->P:5\->S:5\->T
+\IfEnd
+\If Z=2
+\Then \(-)3\->P:5\->S:12\->T
+\IfEnd
+\If Z=3
+\Then \(-)4\->P:5\->S:19\->T
+\IfEnd
+\If Z=4
+\Then \(-)5\->P:5\->S:26\->T
+\IfEnd
+\If Z=5
+\Then \(-)6\->P:5\->S:33\->T
+\IfEnd
+\If Z=6
+\Then \(-)4\->P:5\->S:40\->T
+\IfEnd
+\If Z=7
+\Then \(-)3\->P:5\->S:47\->T
+\IfEnd
+\If Z=8
+\Then \(-)2\->P:5\->S:54\->T
+\IfEnd
+\If Z=9
+\Then \(-)1\->P:12\->S:5\->T
+\IfEnd
+\If Z=10
+\Then 12\->S:12\->T
+\IfEnd
+\If Z=11
+\Then 12\->S:19\->T
+\IfEnd
+\If Z=12
+\Then 12\->S:26\->T
+\IfEnd
+\If Z=13
+\Then 12\->S:33\->T
+\IfEnd
+\If Z=14
+\Then 12\->S:40\->T
+\IfEnd
+\If Z=15
+\Then 12\->S:47\->T
+\IfEnd
+\If Z=16
+\Then 12\->S:54\->T
+\IfEnd
+\If Z=17
+\Then 1\->P:47\->S:5\->T
+\IfEnd
+\If Z=18
+\Then 47\->S:12\->T
+\IfEnd
+\If Z=19
+\Then 47\->S:19\->T
+\IfEnd
+\If Z=20
+\Then 47\->S:26\->T
+\IfEnd
+\If Z=21
+\Then 47\->S:33\->T
+\IfEnd
+\If Z=22
+\Then 47\->S:40\->T
+\IfEnd
+\If Z=23
+\Then 47\->S:47\->T
+\IfEnd
+\If Z=24
+\Then 47\->S:54\->T
+\IfEnd
+\If Z=25
+\Then 2\->P:54\->S:5\->T
+\IfEnd
+\If Z=26
+\Then 3\->P:54\->S:12\->T
+\IfEnd
+\If Z=27
+\Then 4\->P:54\->S:19\->T
+\IfEnd
+\If Z=28
+\Then 5\->P:54\->S:26\->T
+\IfEnd
+\If Z=29
+\Then 6\->P:54\->S:33\->T
+\IfEnd
+\If Z=30
+\Then 4\->P:54\->S:40\->T
+\IfEnd
+\If Z=31
+\Then 3\->P:54\->S:47\->T
+\IfEnd
+\If Z=32
+\Then 2\->P:54\->S:54\->T
+\IfEnd
+S\->Q:T\->R
+\Prog "C DRAW P"
+\GotoA
+\Lbl Z
+
+%End

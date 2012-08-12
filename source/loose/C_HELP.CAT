@@ -1,0 +1,38 @@
+%Header Record
+Format:TXT
+Communication SW:0
+Data Type:PG
+Capacity:288
+File Name:C HELP
+Group Name:
+Password:
+Option1:NL
+Option2:
+Option3:
+Option4:
+%Data Record
+F=1\=>\Goto1
+F=2\=>\Goto2
+F=3\=>\Goto3
+\Lbl 1
+\Text 49,62,"MOVE CURSOR TO"
+\Text 55,62,"1TH LOCATION"
+\Orange \Text 56,114,"EXE"
+\GotoZ
+\Lbl 2
+\Text 49,62,"MOVE CURSOR TO"
+\Text 55,62,"END LOCATION"
+\Orange \Text 56,114,"EXE"
+\GotoZ
+\Lbl 3
+\Text 49,62,"PRESS EXE TO GO"
+\Text 55,62,"TO NEXT MENU"
+\Orange \Text 56,114,"EXE"
+\GotoZ
+\Lbl Z
+\Do:\Getkey\->A
+\LpWhile A\<>31
+\Orange \Text 56,114,"   "
+1\->E:\Prog "C EMPTY"
+
+%End

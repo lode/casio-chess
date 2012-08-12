@@ -1,0 +1,78 @@
+%Header Record
+Format:TXT
+Communication SW:0
+Data Type:PG
+Capacity:409
+File Name:C P QUEE
+Group Name:
+Password:
+Option1:NL
+Option2:
+Option3:
+Option4:
+%Data Record
+\If \Abs (M-V)=\Abs (N-W)
+\Then \Goto1
+\IfEnd
+\If M=V\ Or N=W
+\Then \Goto5
+\Else \GotoX
+\Lbl 1
+M>V\=>\(-)1\->K
+M<V\=>1\->K
+N>W\=>\(-)1\->L
+N<W\=>1\->L
+M\->A
+N\->B
+\Lbl 2
+A+K\->A
+A=V\=>\Goto3
+B+L\->B
+B=W\=>\Goto3
+\If \Mat C[A,B]\<>0
+\Then \GotoX
+\Else \Goto2
+\Lbl 3
+\r=2\=>\Goto4
+\If \Mat C[V,W]>0
+\Then \GotoX
+\Else \GotoZ
+\Lbl 4
+\If \Mat C[V,W]<0
+\Then \GotoX
+\Else \GotoZ
+\Lbl 5
+N\<>W\=>\Goto7
+M>V\=>\(-)1\->K
+M<V\=>1\->K
+M\->A
+\Lbl 6
+A+K\->A
+A=V\=>\Goto9
+\If \Mat C[A,N]\<>0
+\Then \GotoX
+\Else \Goto6
+\Lbl 7
+N>W\=>\(-)1\->K
+N<W\=>1\->K
+N\->A
+\Lbl 8
+A+K\->A
+A=W\=>\Goto9
+\If \Mat C[M,A]\<>0
+\Then \GotoX
+\Else \Goto8
+\Lbl 9
+\r=2\=>\Goto0
+\If \Mat C[V,W]>0
+\Then \GotoX
+\Else \GotoZ
+\Lbl 0
+\If \Mat C[V,W]<0
+\Then \GotoX
+\Else \GotoZ
+\Lbl X
+6248\->O
+\Lbl Z
+
+%End

@@ -1,0 +1,38 @@
+%Header Record
+Format:TXT
+Communication SW:0
+Data Type:PG
+Capacity:221
+File Name:C PAWN S
+Group Name:
+Password:
+Option1:NL
+Option2:
+Option3:
+Option4:
+%Data Record
+2\->E:\Prog "C EMPTY"
+\Text 49,62,"CHOOSE NEW:"
+\Text 55,62,"Q,B,K,R?"
+\Orange \Text 55,62,"Q B K R"
+\Lbl 0
+0\->A:0\->P
+\Do
+\Getkey\->A
+\LpWhile A=0
+\r=2\=>\Goto1
+A=63\=>5\->P
+A=66\=>4\->P
+A=35\=>3\->P
+A=53\=>2\->P
+P=0\=>\Goto0
+\GotoZ
+\Lbl 1
+A=63\=>\(-)5\->P
+A=66\=>\(-)4\->P
+A=35\=>\(-)3\->P
+A=53\=>\(-)2\->P
+\Lbl Z
+\Mat C[M,N]\->\Mat C[V,W]
+
+%End

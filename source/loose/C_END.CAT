@@ -1,0 +1,21 @@
+%Header Record
+Format:TXT
+Communication SW:0
+Data Type:PG
+Capacity:131
+File Name:C END
+Group Name:
+Password:
+Option1:NL
+Option2:
+Option3:
+Option4:
+%Data Record
+\theta=8426\=>\Text 49,62,"PLAYER 1 WINS!"
+\theta=6248\=>\Text 49,62,"PLAYER 2 WINS!"
+\theta=8642\=>\Text 49,62,"IT'S A DRAW..."
+0\->\r:0\->\theta:0\->A~Z
+\Fill(0,\Mat C)
+\Fill(0,\Mat D)
+
+%End

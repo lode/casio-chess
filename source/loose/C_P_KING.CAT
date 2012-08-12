@@ -1,0 +1,83 @@
+%Header Record
+Format:TXT
+Communication SW:0
+Data Type:PG
+Capacity:651
+File Name:C P KING
+Group Name:
+Password:
+Option1:NL
+Option2:
+Option3:
+Option4:
+%Data Record
+I=6248\=>\Goto0
+\If M-V\<>0\ Or \Abs (N-W)\<>2
+\Then \Goto3
+\IfEnd
+\Lbl 0
+\If \r=1\ And \Mat D[6,1]=8426\ And W=3
+\Then \Goto1
+\IfEnd
+\If \r=1\ And \Mat D[6,2]=8426\ And W=7
+\Then \Goto1
+\IfEnd
+\If \r=2\ And \Mat D[6,3]=8426\ And W=3
+\Then \Goto1
+\IfEnd
+\If \r=2\ And \Mat D[6,4]=8426\ And W=7
+\Then \Goto1
+\IfEnd
+\GotoX
+\Lbl 1
+W=3\=>\(-)1\->K
+W=7\=>1\->K
+\If \Mat C[M,N+K]\<>0
+\Then \GotoX
+\IfEnd
+\If \Mat C[M,N+2K]\<>0
+\Then \GotoX
+\IfEnd
+\If W=3\ And \Mat C[M,N+3K]\<>0
+\Then \GotoX
+\IfEnd
+J=6248\=>\Goto2
+V\->\Mat D[9,1]
+W\->\Mat D[9,2]
+N+K\->W
+\Prog "C CHCK K"
+\Mat D[9,2]=3\=>\(-)1\->K
+\Mat D[9,2]=7\=>1\->K
+N+2K\->W
+\Prog "C CHCK K"
+\If W=3
+\Then N+(3*\(-)1)\->W:\Prog "C CHCK K"
+\IfEnd
+\Mat D[9,1]\->V
+\Mat D[9,2]\->W
+\Lbl 2
+4756\->O:\GotoZ
+I=6248\=>\GotoZ
+\Lbl 3
+\If \Abs (M-V)>1\ Or \Abs (N-W)>1
+\Then \GotoX
+\IfEnd
+\r=2\=>\Goto4
+\If \Mat C[V,W]>0
+\Then \GotoX
+\Else \GotoZ
+\Lbl 4
+\If \Mat C[V,W]<0
+\Then \GotoX
+\Else \GotoZ
+\Lbl X
+6248\->O
+\Lbl Z
+\If \r=1\ And O\<>6248
+\Then 6248\->\Mat D[6,1]:6248\->\Mat D[6,2]
+\IfEnd
+\If \r=2\ And O\<>6248
+\Then 6248\->\Mat D[6,3]:6248\->\Mat D[6,4]
+\IfEnd
+
+%End

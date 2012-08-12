@@ -1,0 +1,296 @@
+File Name:CHESS L
+
+Cls:8426->theta:Prog "CL START":-2->r:Green PxlOn 1,125Disp
+Lbl 0
+r=-2=>Goto A
+ClrText
+"PIECE (-6/6)"?->I
+I<-6=>Goto 0
+I=0=>Goto 0
+I>6=>Goto 0
+Lbl 1
+r=-1=>Goto B
+10->A:20->B:30->C:40->D:50->E:60->F:70->G:80->H
+"OLD (A/H+1/8)"?->J
+J<11=>Goto 1
+J>88=>Goto 1
+Lbl 2
+"NEW (A/H+1/8)"?->K
+K<11=>Goto 2
+K>88=>Goto 2
+0->L
+Lbl 3
+L+10->L
+If J-L<10
+Then L/10->N:J-L->M:0->L:Goto 4
+IfEnd
+Goto 3
+Lbl 4
+L+10->L
+If K-L<10
+Then L/10->P:K-L->O:Goto 5
+IfEnd
+Goto 4
+Lbl 5
+(M*7)-2->Q:(N*7)-2->R
+(O*7)-2->S:(P*7)-2->T
+I->P
+Prog "CL DRAW"
+r+1->r
+r=1=>Goto 6
+r=2=>Goto 7
+r=3=>Green PxlOn 1,125Disp
+r=4=>Goto 8
+If r>4 And r<10
+Then Green Text 50,105,rDisp
+IfEnd
+r=10=>Goto 9
+r>10=>Green Text 50,103,rDisp
+Goto 0
+Lbl 6
+Green Text 56,63,"  MOVE PIECES  "Disp
+Goto 0
+Lbl 7
+Text 17,65,"  FOR MORE {i}  "
+Text 23,67,"CONTACT LODEC"
+Text 29,66,"LODECLAASSENaster"
+Text 35,62,"  HOTMAIL.COM  "
+Text 42,67,"  HAVE FUN!  "Disp
+Goto 0
+Lbl 8
+Green Text 50,69,"  MOVES:    "
+Green Text 50,105,r
+Green Text 56,71," PRESS EXE  "Disp
+Goto 0
+Lbl 9
+Green Text 50,75,"MOVES: "
+Green Text 50,103,"10"Disp
+Goto 0
+Lbl A
+ClrText
+"WHITE: PAWN=1,ROOK=2,KNIGHT=3,BISHOP=4,   QUEEN=5,KING=6"
+"BLACK: SAME AS WHITE,ONLY NEGATIVE"
+"PRESS EXE"Disp
+-1->r:Goto 0
+Lbl B
+ClrText
+"MOVE: A/H ARE TURNED AROUND..."
+"SO INSTEAD OF:"
+"E+2,E+4, FOR WHITE"
+"YOU TYPE: E+7,E+5"
+"SORRY, BUT TOO HARD  TO FIX... LODEC"Disp
+ClrText:0->r:Goto 1
+
+
+File Name:CL START
+
+0->Z
+theta=0=>Goto A
+Cls
+Green F-Line 61,1,125,1
+Green F-Line 126,2,126,61
+Green F-Line 125,62,61,62
+Green F-Line 60,61,60,2
+Green Text 3,72,"CHESS LIGHT"
+Green Text 9,67,"MADE BY LODEC"
+Green F-Line 62,15,124,15
+Text 17,66,"CHESS LIGHT IS"
+Text 23,67,"MADE WITHOUT"
+Text 29,71,"CHESS RULES"
+Text 36,63,"MADE FOR A FAST"
+Text 42,67,"GAME OF CHESS"
+Green F-Line 62,48,124,48
+Green Text 50,71,"PLEASE WAIT"
+Green Text 56,65,"SETTING PIECES"
+Green F-Line 58,3,4,3
+Green F-Line 58,60,4,60
+Green F-Line 3,4,3,59
+Lbl A
+Z+1->Z
+Z=33=>Goto Z
+If Z=1
+Then -2->P:5->S:5->T
+IfEnd
+If Z=2
+Then -3->P:5->S:12->T
+IfEnd
+If Z=3
+Then -4->P:5->S:19->T
+IfEnd
+If Z=4
+Then -5->P:5->S:26->T
+IfEnd
+If Z=5
+Then -6->P:5->S:33->T
+IfEnd
+If Z=6
+Then -4->P:5->S:40->T
+IfEnd
+If Z=7
+Then -3->P:5->S:47->T
+IfEnd
+If Z=8
+Then -2->P:5->S:54->T
+IfEnd
+If Z=9
+Then -1->P:12->S:5->T
+IfEnd
+If Z=10
+Then 12->S:12->T
+IfEnd
+If Z=11
+Then 12->S:19->T
+IfEnd
+If Z=12
+Then 12->S:26->T
+IfEnd
+If Z=13
+Then 12->S:33->T
+IfEnd
+If Z=14
+Then 12->S:40->T
+IfEnd
+If Z=15
+Then 12->S:47->T
+IfEnd
+If Z=16
+Then 12->S:54->T
+IfEnd
+If Z=17
+Then 1->P:47->S:5->T
+IfEnd
+If Z=18
+Then 47->S:12->T
+IfEnd
+If Z=19
+Then 47->S:19->T
+IfEnd
+If Z=20
+Then 47->S:26->T
+IfEnd
+If Z=21
+Then 47->S:33->T
+IfEnd
+If Z=22
+Then 47->S:40->T
+IfEnd
+If Z=23
+Then 47->S:47->T
+IfEnd
+If Z=24
+Then 47->S:54->T
+IfEnd
+If Z=25
+Then 2->P:54->S:5->T
+IfEnd
+If Z=26
+Then 3->P:54->S:12->T
+IfEnd
+If Z=27
+Then 4->P:54->S:19->T
+IfEnd
+If Z=28
+Then 5->P:54->S:26->T
+IfEnd
+If Z=29
+Then 6->P:54->S:33->T
+IfEnd
+If Z=30
+Then 4->P:54->S:40->T
+IfEnd
+If Z=31
+Then 3->P:54->S:47->T
+IfEnd
+If Z=32
+Then 2->P:54->S:54->T
+IfEnd
+S->Q:T->R
+theta=0=>Prog "C DRAW P"
+theta=8426=>Prog "CL DRAW"
+Goto A
+Lbl Z
+theta=0=>Return
+Green Text 50,70,"PRESS EXE TO"
+Green Text 56,65,"START THE GAME"
+
+
+File Name:CL DRAW
+
+Orange Text Q,R," "
+Text Q,R," "
+Orange Text S,T," "
+Text S,T," "
+P=-6=>Goto A
+P=-5=>Goto B
+P=-4=>Goto C
+P=-3=>Goto D
+P=-2=>Goto E
+P=-1=>Goto F
+P=1=>Goto G
+P=2=>Goto H
+P=3=>Goto I
+P=4=>Goto J
+P=5=>Goto K
+P=6=>Goto L
+Goto Z
+Lbl A
+F-Line T+1,S+4,T+3,S+4
+F-Line T+2,S+4,T+2,S
+F-Line T+1,S+1,T+3,S+1
+Goto Z
+Lbl B
+F-Line T+1,S+4,T+3,S+4
+F-Line T+2,S+4,T+2,S+1
+F-Line T+1,S,T+1,S+1
+F-Line T+3,S,T+3,S+1
+Goto Z
+Lbl C
+F-Line T+1,S+4,T+3,S+4
+F-Line T+1,S+3,T+3,S+3
+F-Line T+2,S+4,T+2,S+1
+Goto Z
+Lbl D
+F-Line T+2,S+4,T+2,S+1
+F-Line T+1,S+2,T+3,S+2
+F-Line T+1,S+2,T+1,S+3
+Goto Z
+Lbl E
+F-Line T+1,S+4,T+1,S+1
+F-Line T+2,S+4,T+2,S+2
+F-Line T+3,S+4,T+3,S+1
+Goto Z
+Lbl F
+F-Line T+1,S+4,T+3,S+4
+F-Line T+2,S+4,T+2,S+2
+Goto Z
+Lbl G
+Orange F-Line T+1,S+4,T+3,S+4
+Orange F-Line T+2,S+4,T+2,S+2
+Goto Z
+Lbl H
+Orange F-Line T+1,S+4,T+1,S+1
+Orange F-Line T+2,S+4,T+2,S+2
+Orange F-Line T+3,S+4,T+3,S+1
+Goto Z
+Lbl I
+Orange F-Line T+2,S+4,T+2,S+1
+Orange F-Line T+1,S+2,T+3,S+2
+Orange F-Line T+1,S+2,T+1,S+3
+Goto Z
+Lbl J
+Orange F-Line T+1,S+4,T+3,S+4
+Orange F-Line T+1,S+3,T+3,S+3
+Orange F-Line T+2,S+4,T+2,S+1
+Goto Z
+Lbl K
+Orange F-Line T+1,S+4,T+3,S+4
+Orange F-Line T+2,S+4,T+2,S+1
+Orange F-Line T+1,S,T+1,S+1
+Orange F-Line T+3,S,T+3,S+1
+Goto Z
+Lbl L
+Orange F-Line T+1,S+4,T+3,S+4
+Orange F-Line T+2,S+4,T+2,S
+Orange F-Line T+1,S+1,T+3,S+1
+Goto Z
+Lbl Z

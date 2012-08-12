@@ -1,0 +1,170 @@
+%Header Record
+Format:TXT
+Communication SW:0
+Data Type:PG
+Capacity:1442
+File Name:C PLAY
+Group Name:
+Password:
+Option1:NL
+Option2:
+Option3:
+Option4:
+%Data Record
+\If \theta=6574
+\Then 0\->\theta:\GotoC
+\IfEnd
+\Lbl A
+0\->\r
+\Lbl B
+\r+1\->\r
+\r=3\=>\GotoA
+\Text 11,100,\r
+\r=1\=>33\->C~D
+\r=2\=>26\->C:33\->D
+1\->Z
+\Lbl C
+Z=1\=>\Text 17,88,"     "
+Z=1\=>\Text 49,62,"SELECT PIECE   "
+Z=2\=>\Text 49,62,"SELECT LOCATION"
+Z=1\=>1\->F
+Z=2\=>2\->F
+\Do:\Getkey\->A
+\Green \PxlChg C,D
+\LpWhile A=0
+A=47\=>\GotoX
+A=68\=>\GotoZ
+A=54\=>\GotoY
+A=65\=>\GotoY
+A=31\=>\GotoD
+A=28\=>\Goto1
+A=27\=>\Goto2
+A=37\=>\Goto3
+A=38\=>\Goto4
+\GotoC
+\Lbl 1
+C=5\=>\GotoC
+\Frac (C/2)\->A
+\Frac (D/2)\->B
+A\<>B\=>\Green \PxlOn C,D
+A=B\=>\Green \PxlOff C,D
+C-7\->C
+\GotoC
+\Lbl 2
+D=54\=>\GotoC
+\Frac (C/2)\->A
+\Frac (D/2)\->B
+A\<>B\=>\Green \PxlOn C,D
+A=B\=>\Green \PxlOff C,D
+D+7\->D
+\GotoC
+\Lbl 3
+C=54\=>\GotoC
+\Frac (C/2)\->A
+\Frac (D/2)\->B
+A\<>B\=>\Green \PxlOn C,D
+A=B\=>\Green \PxlOff C,D
+C+7\->C
+\GotoC
+\Lbl 4
+D=5\=>\GotoC
+\Frac (C/2)\->A
+\Frac (D/2)\->B
+A\<>B\=>\Green \PxlOn C,D
+A=B\=>\Green \PxlOff C,D
+D-7\->D
+\GotoC
+\Lbl D
+\Frac (C/2)\->A
+\Frac (D/2)\->B
+A\<>B\=>\Green \PxlOn C,D
+A=B\=>\Green \PxlOff C,D
+Z=2\=>\GotoE
+C\->Q:D\->R
+(Q+2)/7\->M
+(R+2)/7\->N
+\Mat C[M,N]\->P
+1\->F:\Prog "C RECON"
+Z+1\->Z
+\GotoC
+\Lbl E
+C\->S:D\->T
+(S+2)/7\->V
+(T+2)/7\->W
+8426\->O
+2\->F:\Prog "C RECON"
+\Abs P=1\=>\Prog "C P PAWN"
+\Abs P=6\=>\Prog "C P KING"
+O=6248\=>\GotoC
+\Text 49,62,"MOVING PIECE"
+\Prog "C DRAW P"
+0\->\Mat C[M,N]
+P\->\Mat C[V,W]
+2\->E:\Prog "C EMPTY"
+\Prog "C LOG MV"
+0\->\theta
+3\->F:\Prog "C RECON"
+\theta\<>0\=>\GotoZ
+O=6574\=>\GotoF
+O=4756\=>\GotoG
+\GotoB
+\Lbl F
+\Prog "C PAWN S"
+\Orange \Text 55,62,"        "
+\Prog "C DRAW P"
+0\->\Mat C[M,N]
+P\->\Mat C[V,W]
+0\->\theta
+3\->F:\Prog "C RECON"
+\theta\<>0\=>\Prog "C END"
+\GotoB
+\Lbl G
+\Prog "C KING S"
+\Text 49,62,"MOVING PIECE"
+\Prog "C DRAW P"
+0\->\Mat C[M,N]
+P\->\Mat C[V,W]
+2\->E:\Prog "C EMPTY"
+0\->\theta
+3\->F:\Prog "C RECON"
+\theta\<>0\=>\Prog "C END"
+\GotoB
+\Lbl X
+2\->E:\Prog "C EMPTY"
+\Text 49,62,"ARE YOU SURE?"
+\Text 55,62,"YES OR NO"
+\Orange \Text 55,62,"Y      N"
+\Lbl 5
+0\->A
+\Do
+\Getkey\->A
+\LpWhile A=0
+A=32\=>\Goto6
+A=64\=>\Goto7
+\Goto5
+\Lbl 6
+\Fill(0,\Mat C)
+\Fill(0,\Mat C)
+0\->\r:0\->\theta:0\->A~Z
+\ClrText:\Cls
+\Stop
+\Lbl 7
+1\->E:\Prog "C EMPTY"
+\GotoC
+\Lbl Y
+1\->E:\Prog "C EMPTY"
+A=54\=>\Prog "C OPTN"
+A=65\=>\Prog "C HELP"
+1\->E:\Prog "C EMPTY"
+\GotoC
+\Lbl Z
+\theta\<>0\=>\Goto8
+6574\->\theta
+\Frac (C/2)\->A
+\Frac (D/2)\->B
+A\<>B\=>\Green \PxlOn C,D
+A=B\=>\Green \PxlOff C,D
+\Text 49,62,"GAME PAUSED    "
+\Lbl 8
+
+%End

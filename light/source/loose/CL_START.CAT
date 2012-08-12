@@ -1,0 +1,143 @@
+%Header Record
+Format:TXT
+Communication SW:0
+Data Type:PG
+Capacity:1262
+File Name:CL START
+Group Name:
+Password:
+Option1:NL
+Option2:
+Option3:
+Option4:
+%Data Record
+0\->Z
+\theta=0\=>\GotoA
+\Cls
+\Green \F-Line 61,1,125,1
+\Green \F-Line 126,2,126,61
+\Green \F-Line 125,62,61,62
+\Green \F-Line 60,61,60,2
+\Green \Text 3,72,"CHESS LIGHT"
+\Green \Text 9,67,"MADE BY LODEC"
+\Green \F-Line 62,15,124,15
+\Text 17,66,"CHESS LIGHT IS"
+\Text 23,67,"MADE WITHOUT"
+\Text 29,71,"CHESS RULES"
+\Text 36,63,"MADE FOR A FAST"
+\Text 42,67,"GAME OF CHESS"
+\Green \F-Line 62,48,124,48
+\Green \Text 50,71,"PLEASE WAIT"
+\Green \Text 56,65,"SETTING PIECES"
+\Green \F-Line 58,3,4,3
+\Green \F-Line 58,60,4,60
+\Green \F-Line 3,4,3,59
+\Lbl A
+Z+1\->Z
+Z=33\=>\GotoZ
+\If Z=1
+\Then \(-)2\->P:5\->S:5\->T
+\IfEnd
+\If Z=2
+\Then \(-)3\->P:5\->S:12\->T
+\IfEnd
+\If Z=3
+\Then \(-)4\->P:5\->S:19\->T
+\IfEnd
+\If Z=4
+\Then \(-)5\->P:5\->S:26\->T
+\IfEnd
+\If Z=5
+\Then \(-)6\->P:5\->S:33\->T
+\IfEnd
+\If Z=6
+\Then \(-)4\->P:5\->S:40\->T
+\IfEnd
+\If Z=7
+\Then \(-)3\->P:5\->S:47\->T
+\IfEnd
+\If Z=8
+\Then \(-)2\->P:5\->S:54\->T
+\IfEnd
+\If Z=9
+\Then \(-)1\->P:12\->S:5\->T
+\IfEnd
+\If Z=10
+\Then 12\->S:12\->T
+\IfEnd
+\If Z=11
+\Then 12\->S:19\->T
+\IfEnd
+\If Z=12
+\Then 12\->S:26\->T
+\IfEnd
+\If Z=13
+\Then 12\->S:33\->T
+\IfEnd
+\If Z=14
+\Then 12\->S:40\->T
+\IfEnd
+\If Z=15
+\Then 12\->S:47\->T
+\IfEnd
+\If Z=16
+\Then 12\->S:54\->T
+\IfEnd
+\If Z=17
+\Then 1\->P:47\->S:5\->T
+\IfEnd
+\If Z=18
+\Then 47\->S:12\->T
+\IfEnd
+\If Z=19
+\Then 47\->S:19\->T
+\IfEnd
+\If Z=20
+\Then 47\->S:26\->T
+\IfEnd
+\If Z=21
+\Then 47\->S:33\->T
+\IfEnd
+\If Z=22
+\Then 47\->S:40\->T
+\IfEnd
+\If Z=23
+\Then 47\->S:47\->T
+\IfEnd
+\If Z=24
+\Then 47\->S:54\->T
+\IfEnd
+\If Z=25
+\Then 2\->P:54\->S:5\->T
+\IfEnd
+\If Z=26
+\Then 3\->P:54\->S:12\->T
+\IfEnd
+\If Z=27
+\Then 4\->P:54\->S:19\->T
+\IfEnd
+\If Z=28
+\Then 5\->P:54\->S:26\->T
+\IfEnd
+\If Z=29
+\Then 6\->P:54\->S:33\->T
+\IfEnd
+\If Z=30
+\Then 4\->P:54\->S:40\->T
+\IfEnd
+\If Z=31
+\Then 3\->P:54\->S:47\->T
+\IfEnd
+\If Z=32
+\Then 2\->P:54\->S:54\->T
+\IfEnd
+S\->Q:T\->R
+\theta=0\=>\Prog "C DRAW P"
+\theta=8426\=>\Prog "CL DRAW"
+\GotoA
+\Lbl Z
+\theta=0\=>\Return
+\Green \Text 50,70,"PRESS EXE TO"
+\Green \Text 56,65,"START THE GAME"
+
+%End

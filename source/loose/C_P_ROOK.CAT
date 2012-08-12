@@ -1,0 +1,62 @@
+%Header Record
+Format:TXT
+Communication SW:0
+Data Type:PG
+Capacity:396
+File Name:C P ROOK
+Group Name:
+Password:
+Option1:NL
+Option2:
+Option3:
+Option4:
+%Data Record
+\If M\<>V\ And N\<>W
+\Then \GotoX
+\IfEnd
+N\<>W\=>\Goto2
+M>V\=>\(-)1\->K
+M<V\=>1\->K
+M\->A
+\Lbl 1
+A+K\->A
+A=V\=>\Goto4
+\If \Mat C[A,N]\<>0
+\Then \GotoX
+\Else \Goto1
+\Lbl 2
+N>W\=>\(-)1\->K
+N<W\=>1\->K
+N\->A
+\Lbl 3
+A+K\->A
+A=W\=>\Goto4
+\If \Mat C[M,A]\<>0
+\Then \GotoX
+\Else \Goto3
+\Lbl 4
+\r=2\=>\Goto5
+\If \Mat C[V,W]>0
+\Then \GotoX
+\Else \GotoZ
+\Lbl 5
+\If \Mat C[V,W]<0
+\Then \GotoX
+\Else \GotoZ
+\Lbl X
+6248\->O
+\Lbl Z
+\If \r=1\ And M=8\ And N=1\ And O=8426
+\Then 6248\->\Mat D[6,1]
+\IfEnd
+\If \r=1\ And M=8\ And N=8\ And O=8426
+\Then 6248\->\Mat D[6,2]
+\IfEnd
+\If \r=2\ And M=1\ And N=1\ And O=8426
+\Then 6248\->\Mat D[6,3]
+\IfEnd
+\If \r=2\ And M=1\ And N=8\ And O=8426
+\Then 6248\->\Mat D[6,4]
+\IfEnd
+
+%End

@@ -1,0 +1,205 @@
+%Header Record
+Format:TXT
+Communication SW:0
+Data Type:PG
+Capacity:3960
+File Name:C LOG MV
+Group Name:
+Password:
+Option1:NL
+Option2:
+Option3:
+Option4:
+%Data Record
+H=6248\=>\GotoZ
+\Text 49,62,"LOGGING MOVE"
+M\->\Mat D[1,1]
+N\->\Mat D[1,2]
+V\->\Mat D[1,3]
+W\->\Mat D[1,4]
+\r=1\=>\GotoA
+\r=2\=>\GotoB
+\Lbl A
+\Mat D[2,1]\->\Mat D[3,1]
+\Mat D[2,2]\->\Mat D[3,2]
+\Mat D[2,3]\->\Mat D[3,3]
+\Mat D[2,4]\->\Mat D[3,4]
+\Mat D[1,1]\->\Mat D[2,1]
+\Mat D[1,2]\->\Mat D[2,2]
+\Mat D[1,3]\->\Mat D[2,3]
+\Mat D[1,4]\->\Mat D[2,4]
+\Mat D[4,1]\->\Mat D[5,1]
+\Mat D[4,2]\->\Mat D[5,2]
+\Mat D[4,3]\->\Mat D[5,3]
+\Mat D[4,4]\->\Mat D[5,4]
+0\->\Mat D[4,1]
+0\->\Mat D[4,2]
+0\->\Mat D[4,3]
+0\->\Mat D[4,4]
+\GotoC
+\Lbl B
+\Mat D[1,1]\->\Mat D[4,1]
+\Mat D[1,2]\->\Mat D[4,2]
+\Mat D[1,3]\->\Mat D[4,3]
+\Mat D[1,4]\->\Mat D[4,4]
+\GotoD
+\Lbl C
+\Text 33,84,"  "
+\Text 33,95,"  "
+\Text 41,84,"  "
+\Mat D[3,1]=0\=>\Text 41,84," "
+\Mat D[3,1]=1\=>\Text 41,84,"8"
+\Mat D[3,1]=2\=>\Text 41,84,"7"
+\Mat D[3,1]=3\=>\Text 41,84,"6"
+\Mat D[3,1]=4\=>\Text 41,84,"5"
+\Mat D[3,1]=5\=>\Text 41,84,"4"
+\Mat D[3,1]=6\=>\Text 41,84,"3"
+\Mat D[3,1]=7\=>\Text 41,84,"2"
+\Mat D[3,1]=8\=>\Text 41,84,"1"
+\Mat D[3,2]=0\=>\Text 41,88," "
+\Mat D[3,2]=1\=>\Text 41,88,"A"
+\Mat D[3,2]=2\=>\Text 41,88,"B"
+\Mat D[3,2]=3\=>\Text 41,88,"C"
+\Mat D[3,2]=4\=>\Text 41,88,"D"
+\Mat D[3,2]=5\=>\Text 41,88,"E"
+\Mat D[3,2]=6\=>\Text 41,88,"F"
+\Mat D[3,2]=7\=>\Text 41,88,"G"
+\Mat D[3,2]=8\=>\Text 41,88,"H"
+\Text 41,95,"  "
+\Mat D[3,3]=0\=>\Text 41,95," "
+\Mat D[3,3]=1\=>\Text 41,95,"8"
+\Mat D[3,3]=2\=>\Text 41,95,"7"
+\Mat D[3,3]=3\=>\Text 41,95,"6"
+\Mat D[3,3]=4\=>\Text 41,95,"5"
+\Mat D[3,3]=5\=>\Text 41,95,"4"
+\Mat D[3,3]=6\=>\Text 41,95,"3"
+\Mat D[3,3]=7\=>\Text 41,95,"2"
+\Mat D[3,3]=8\=>\Text 41,95,"1"
+\Mat D[3,4]=0\=>\Text 41,99," "
+\Mat D[3,4]=1\=>\Text 41,99,"A"
+\Mat D[3,4]=2\=>\Text 41,99,"B"
+\Mat D[3,4]=3\=>\Text 41,99,"C"
+\Mat D[3,4]=4\=>\Text 41,99,"D"
+\Mat D[3,4]=5\=>\Text 41,99,"E"
+\Mat D[3,4]=6\=>\Text 41,99,"F"
+\Mat D[3,4]=7\=>\Text 41,99,"G"
+\Mat D[3,4]=8\=>\Text 41,99,"H"
+\Text 33,105,"  "
+\Text 33,116,"  "
+\Text 41,105,"  "
+\Mat D[5,1]=0\=>\Text 41,105," "
+\Mat D[5,1]=1\=>\Text 41,105,"8"
+\Mat D[5,1]=2\=>\Text 41,105,"7"
+\Mat D[5,1]=3\=>\Text 41,105,"6"
+\Mat D[5,1]=4\=>\Text 41,105,"5"
+\Mat D[5,1]=5\=>\Text 41,105,"4"
+\Mat D[5,1]=6\=>\Text 41,105,"3"
+\Mat D[5,1]=7\=>\Text 41,105,"2"
+\Mat D[5,1]=8\=>\Text 41,105,"1"
+\Mat D[5,2]=0\=>\Text 41,109," "
+\Mat D[5,2]=1\=>\Text 41,109,"A"
+\Mat D[5,2]=2\=>\Text 41,109,"B"
+\Mat D[5,2]=3\=>\Text 41,109,"C"
+\Mat D[5,2]=4\=>\Text 41,109,"D"
+\Mat D[5,2]=5\=>\Text 41,109,"E"
+\Mat D[5,2]=6\=>\Text 41,109,"F"
+\Mat D[5,2]=7\=>\Text 41,109,"G"
+\Mat D[5,2]=8\=>\Text 41,109,"H"
+\Text 41,116,"  "
+\Mat D[5,3]=0\=>\Text 41,116," "
+\Mat D[5,3]=1\=>\Text 41,116,"8"
+\Mat D[5,3]=2\=>\Text 41,116,"7"
+\Mat D[5,3]=3\=>\Text 41,116,"6"
+\Mat D[5,3]=4\=>\Text 41,116,"5"
+\Mat D[5,3]=5\=>\Text 41,116,"4"
+\Mat D[5,3]=6\=>\Text 41,116,"3"
+\Mat D[5,3]=7\=>\Text 41,116,"2"
+\Mat D[5,3]=8\=>\Text 41,116,"1"
+\Mat D[5,4]=0\=>\Text 41,120," "
+\Mat D[5,4]=1\=>\Text 41,120,"A"
+\Mat D[5,4]=2\=>\Text 41,120,"B"
+\Mat D[5,4]=3\=>\Text 41,120,"C"
+\Mat D[5,4]=4\=>\Text 41,120,"D"
+\Mat D[5,4]=5\=>\Text 41,120,"E"
+\Mat D[5,4]=6\=>\Text 41,120,"F"
+\Mat D[5,4]=7\=>\Text 41,120,"G"
+\Mat D[5,4]=8\=>\Text 41,120,"H"
+\Mat D[2,1]=0\=>\Text 33,84," "
+\Mat D[2,1]=1\=>\Text 33,84,"8"
+\Mat D[2,1]=2\=>\Text 33,84,"7"
+\Mat D[2,1]=3\=>\Text 33,84,"6"
+\Mat D[2,1]=4\=>\Text 33,84,"5"
+\Mat D[2,1]=5\=>\Text 33,84,"4"
+\Mat D[2,1]=6\=>\Text 33,84,"3"
+\Mat D[2,1]=7\=>\Text 33,84,"2"
+\Mat D[2,1]=8\=>\Text 33,84,"1"
+\Mat D[2,2]=0\=>\Text 33,88," "
+\Mat D[2,2]=1\=>\Text 33,88,"A"
+\Mat D[2,2]=2\=>\Text 33,88,"B"
+\Mat D[2,2]=3\=>\Text 33,88,"C"
+\Mat D[2,2]=4\=>\Text 33,88,"D"
+\Mat D[2,2]=5\=>\Text 33,88,"E"
+\Mat D[2,2]=6\=>\Text 33,88,"F"
+\Mat D[2,2]=7\=>\Text 33,88,"G"
+\Mat D[2,2]=8\=>\Text 33,88,"H"
+\Mat D[2,3]=0\=>\Text 33,95," "
+\Mat D[2,3]=1\=>\Text 33,95,"8"
+\Mat D[2,3]=2\=>\Text 33,95,"7"
+\Mat D[2,3]=3\=>\Text 33,95,"6"
+\Mat D[2,3]=4\=>\Text 33,95,"5"
+\Mat D[2,3]=5\=>\Text 33,95,"4"
+\Mat D[2,3]=6\=>\Text 33,95,"3"
+\Mat D[2,3]=7\=>\Text 33,95,"2"
+\Mat D[2,3]=8\=>\Text 33,95,"1"
+\Mat D[2,4]=0\=>\Text 33,99," "
+\Mat D[2,4]=1\=>\Text 33,99,"A"
+\Mat D[2,4]=2\=>\Text 33,99,"B"
+\Mat D[2,4]=3\=>\Text 33,99,"C"
+\Mat D[2,4]=4\=>\Text 33,99,"D"
+\Mat D[2,4]=5\=>\Text 33,99,"E"
+\Mat D[2,4]=6\=>\Text 33,99,"F"
+\Mat D[2,4]=7\=>\Text 33,99,"G"
+\Mat D[2,4]=8\=>\Text 33,99,"H"
+\GotoZ
+\Lbl D
+\Mat D[4,1]=0\=>\Text 33,105," "
+\Mat D[4,1]=1\=>\Text 33,105,"8"
+\Mat D[4,1]=2\=>\Text 33,105,"7"
+\Mat D[4,1]=3\=>\Text 33,105,"6"
+\Mat D[4,1]=4\=>\Text 33,105,"5"
+\Mat D[4,1]=5\=>\Text 33,105,"4"
+\Mat D[4,1]=6\=>\Text 33,105,"3"
+\Mat D[4,1]=7\=>\Text 33,105,"2"
+\Mat D[4,1]=8\=>\Text 33,105,"1"
+\Mat D[4,2]=0\=>\Text 33,109," "
+\Mat D[4,2]=1\=>\Text 33,109,"A"
+\Mat D[4,2]=2\=>\Text 33,109,"B"
+\Mat D[4,2]=3\=>\Text 33,109,"C"
+\Mat D[4,2]=4\=>\Text 33,109,"D"
+\Mat D[4,2]=5\=>\Text 33,109,"E"
+\Mat D[4,2]=6\=>\Text 33,109,"F"
+\Mat D[4,2]=7\=>\Text 33,109,"G"
+\Mat D[4,2]=8\=>\Text 33,109,"H"
+\Mat D[4,3]=0\=>\Text 33,116," "
+\Mat D[4,3]=1\=>\Text 33,116,"8"
+\Mat D[4,3]=2\=>\Text 33,116,"7"
+\Mat D[4,3]=3\=>\Text 33,116,"6"
+\Mat D[4,3]=4\=>\Text 33,116,"5"
+\Mat D[4,3]=5\=>\Text 33,116,"4"
+\Mat D[4,3]=6\=>\Text 33,116,"3"
+\Mat D[4,3]=7\=>\Text 33,116,"2"
+\Mat D[4,3]=8\=>\Text 33,116,"1"
+\Mat D[4,4]=0\=>\Text 33,120," "
+\Mat D[4,4]=1\=>\Text 33,120,"A"
+\Mat D[4,4]=2\=>\Text 33,120,"B"
+\Mat D[4,4]=3\=>\Text 33,120,"C"
+\Mat D[4,4]=4\=>\Text 33,120,"D"
+\Mat D[4,4]=5\=>\Text 33,120,"E"
+\Mat D[4,4]=6\=>\Text 33,120,"F"
+\Mat D[4,4]=7\=>\Text 33,120,"G"
+\Mat D[4,4]=8\=>\Text 33,120,"H"
+\GotoZ
+\Lbl Z
+2\->E:\Prog "C EMPTY"
+
+%End

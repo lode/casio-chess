@@ -1,0 +1,25 @@
+%Header Record
+Format:TXT
+Communication SW:0
+Data Type:PG
+Capacity:97
+File Name:CHESS
+Group Name:
+Password:
+Option1:NL
+Option2:
+Option3:
+Option4:
+%Data Record
+\theta=6574\=>\Goto1
+0\->\r:0\->\theta:0\->A~Z
+{8,8}\->\Dim \Mat C
+{9,4}\->\Dim \Mat D
+\Prog "C START"
+\Lbl 1
+\Prog "C PLAY"
+\theta=6574\=>\Goto2
+\Prog "C END"
+\Lbl 2
+
+%End

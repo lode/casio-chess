@@ -1,0 +1,48 @@
+%Header Record
+Format:TXT
+Communication SW:0
+Data Type:PG
+Capacity:356
+File Name:C MOVE
+Group Name:
+Password:
+Option1:NL
+Option2:
+Option3:
+Option4:
+%Data Record
+\Green \PxlOn 1,126\Disp\Lbl 0
+"PIECE? (\(-)6\slash6)"?\->P
+P<\(-)6\=>\Goto0
+P=0\=>\Goto0
+P>6\=>\Goto0
+\Lbl 1
+10\->A:20\->B:30\->C:40\->D:50\->E:60\->F:70\->G:80\->H
+"OLD (A\slashH+1\slash8)"?\->K
+K<11\=>\Goto1
+K>88\=>\Goto1
+\Lbl 2
+"NEW (A\slashH+1\slash8)"?\->L
+L<11\=>\Goto2
+L>88\=>\Goto2
+0\->I
+\Lbl 3
+I+10\->I
+\If K-I<10
+\Then I/10\->N:K-I\->M:0\->J:\Goto4
+\IfEnd
+\Goto3
+\Lbl 4
+J+10\->J
+\If L-J<10
+\Then J/10\->W:L-J\->V:\Goto5
+\IfEnd
+\Goto4
+\Lbl 5
+0\->\Mat C[M,N]
+P\->\Mat C[V,W]
+(M*7)-2\->Q:(N*7)-2\->R
+(V*7)-2\->S:(W*7)-2\->T
+\Prog "C DRAW P"
+\Green \PxlOn 1,126\Disp\Goto0
+%End

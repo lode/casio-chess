@@ -1,0 +1,93 @@
+%Header Record
+Format:TXT
+Communication SW:0
+Data Type:PG
+Capacity:887
+File Name:CL DRAW
+Group Name:
+Password:
+Option1:NL
+Option2:
+Option3:
+Option4:
+%Data Record
+\Orange \Text Q,R," "
+\Text Q,R," "
+\Orange \Text S,T," "
+\Text S,T," "
+P=\(-)6\=>\GotoA
+P=\(-)5\=>\GotoB
+P=\(-)4\=>\GotoC
+P=\(-)3\=>\GotoD
+P=\(-)2\=>\GotoE
+P=\(-)1\=>\GotoF
+P=1\=>\GotoG
+P=2\=>\GotoH
+P=3\=>\GotoI
+P=4\=>\GotoJ
+P=5\=>\GotoK
+P=6\=>\GotoL
+\GotoZ
+\Lbl A
+\F-Line T+1,S+4,T+3,S+4
+\F-Line T+2,S+4,T+2,S
+\F-Line T+1,S+1,T+3,S+1
+\GotoZ
+\Lbl B
+\F-Line T+1,S+4,T+3,S+4
+\F-Line T+2,S+4,T+2,S+1
+\F-Line T+1,S,T+1,S+1
+\F-Line T+3,S,T+3,S+1
+\GotoZ
+\Lbl C
+\F-Line T+1,S+4,T+3,S+4
+\F-Line T+1,S+3,T+3,S+3
+\F-Line T+2,S+4,T+2,S+1
+\GotoZ
+\Lbl D
+\F-Line T+2,S+4,T+2,S+1
+\F-Line T+1,S+2,T+3,S+2
+\F-Line T+1,S+2,T+1,S+3
+\GotoZ
+\Lbl E
+\F-Line T+1,S+4,T+1,S+1
+\F-Line T+2,S+4,T+2,S+2
+\F-Line T+3,S+4,T+3,S+1
+\GotoZ
+\Lbl F
+\F-Line T+1,S+4,T+3,S+4
+\F-Line T+2,S+4,T+2,S+2
+\GotoZ
+\Lbl G
+\Orange \F-Line T+1,S+4,T+3,S+4
+\Orange \F-Line T+2,S+4,T+2,S+2
+\GotoZ
+\Lbl H
+\Orange \F-Line T+1,S+4,T+1,S+1
+\Orange \F-Line T+2,S+4,T+2,S+2
+\Orange \F-Line T+3,S+4,T+3,S+1
+\GotoZ
+\Lbl I
+\Orange \F-Line T+2,S+4,T+2,S+1
+\Orange \F-Line T+1,S+2,T+3,S+2
+\Orange \F-Line T+1,S+2,T+1,S+3
+\GotoZ
+\Lbl J
+\Orange \F-Line T+1,S+4,T+3,S+4
+\Orange \F-Line T+1,S+3,T+3,S+3
+\Orange \F-Line T+2,S+4,T+2,S+1
+\GotoZ
+\Lbl K
+\Orange \F-Line T+1,S+4,T+3,S+4
+\Orange \F-Line T+2,S+4,T+2,S+1
+\Orange \F-Line T+1,S,T+1,S+1
+\Orange \F-Line T+3,S,T+3,S+1
+\GotoZ
+\Lbl L
+\Orange \F-Line T+1,S+4,T+3,S+4
+\Orange \F-Line T+2,S+4,T+2,S
+\Orange \F-Line T+1,S+1,T+3,S+1
+\GotoZ
+\Lbl Z
+
+%End
